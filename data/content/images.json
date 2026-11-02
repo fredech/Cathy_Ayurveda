@@ -4,15 +4,16 @@
   "formats": ["avif", "webp", "jpg"],
   "images": [
     {
-      "id": "portrait",
+      "id": "hero",
       "usage": "photo",
-      "source": "data/PHOTO-2026-10-15-09-51-49.jpg",
-      "crop": { "x": 460, "y": 0, "width": 564, "height": 572 },
-      "width": 564,
-      "height": 572,
-      "alt": "Cathy, coach franco-indienne en Ayurveda, souriante auprès de plantes vertes.",
+      "source": "data/PHOTO-index.jpg",
+      "crop": null,
+      "width": 1086,
+      "height": 1448,
+      "formats": ["webp"],
+      "alt": "Séance de soin ayurvédique : massage de la tête à l'huile, avec un pochon de plantes chauffé et des fleurs.",
       "caption": null,
-      "note": "Découpe de la partie droite du visuel de marque fourni (le texte est imprimé dans la partie gauche, il a donc été écarté pour éviter du texte en image). Alt à valider par la praticienne."
+      "note": "Visuel fourni (PNG détouré malgré l'extension .jpg). Généré uniquement en WebP pour conserver la transparence alpha ; pas de repli JPEG, qui aplatirait le fond."
     },
     {
       "id": "spices",

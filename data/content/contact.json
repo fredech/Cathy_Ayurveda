@@ -34,12 +34,13 @@
     "consent": "Merci de cocher cette case pour que je puisse vous répondre."
   },
   "success": {
-    "title": "Votre message est prêt",
-    "text": "Votre logiciel de messagerie devrait s'ouvrir avec le message pré-rempli. Si ce n'est pas le cas, utilisez l'adresse e-mail ci-contre."
+    "title": "Message envoyé",
+    "text": "Merci, votre message a bien été transmis. Je vous réponds personnellement dans les meilleurs délais."
   },
-  "noBackend": {
-    "title": "Envoi direct non configuré",
-    "text": "Ce formulaire n'envoie pas encore de message automatiquement : aucun service d'envoi n'est raccordé au site, et l'adresse de réception n'est pas encore renseignée."
+  "sending": "Envoi en cours…",
+  "error": {
+    "title": "L'envoi n'a pas abouti",
+    "text": "Une erreur est survenue pendant l'envoi. Réessayez dans quelques instants ou écrivez-moi directement :"
   },
   "fields": {
     "responseTimeLabel": "Temps de réponse habituel",
@@ -51,5 +52,5 @@
     "whatsappLabel": "WhatsApp",
     "emailLabel": "E-mail"
   },
-  "sourceNote": "Formulaire et textes de la page rédigés pour ce site. Service d'envoi, adresse de réception, téléphone, WhatsApp, adresse postale et horaires : TODO."
+  "sourceNote": "Formulaire et textes de la page rédigés pour ce site. Téléphone, WhatsApp, adresse postale et horaires : TODO."
 }

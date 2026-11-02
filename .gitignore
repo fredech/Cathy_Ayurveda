@@ -1,6 +1,31 @@
+# Dépendances
 node_modules
+
+# Builds et caches
 dist
 dist-ssr
-*.local
-.DS_Store
 .vite
+*.tsbuildinfo
+
+# Déploiement
+.vercel
+
+# Variables d'environnement — ne jamais versionner la clé Resend
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Couverture de tests
+coverage
+
+# Fichiers système et éditeurs
+.DS_Store
+Thumbs.db

@@ -60,7 +60,9 @@ export function Footer() {
                 </li>
               ) : (
                 <li>
-                  <MissingData variant="inline" label="numéro de téléphone" />
+                  <NavLink to="/contact" className="text-text-muted no-underline hover:text-accent-text">
+                    Formulaire de contact
+                  </NavLink>
                 </li>
               )}
 

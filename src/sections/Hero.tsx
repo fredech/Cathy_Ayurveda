@@ -2,7 +2,7 @@ import { Container } from '../components/ui/Container'
 import { Button } from '../components/ui/Button'
 import { Picture } from '../components/ui/Picture'
 import { Illustration } from '../components/graphics/Botanical'
-import { portraitImage, HERO_IMAGE_SIZES } from '../lib/images'
+import { heroImage, HERO_IMAGE_SIZES } from '../lib/images'
 import { home, site } from '../lib/data'
 
 export function Hero() {
@@ -46,7 +46,7 @@ export function Hero() {
           <figure className="relative mx-auto w-full max-w-md lg:max-w-none">
             <div className="arch-mask relative bg-surface-alt">
               <Picture
-                image={portraitImage}
+                image={heroImage}
                 priority
                 sizes={HERO_IMAGE_SIZES}
                 imgClassName="h-full w-full object-cover"

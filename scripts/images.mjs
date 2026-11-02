@@ -70,14 +70,23 @@ async function run() {
     if (!targets.includes(masterWidth)) targets.push(masterWidth)
     targets.sort((a, b) => a - b)
 
+    // Un visuel peut restreindre ses formats (ex. WebP seul pour conserver la
+    // transparence alpha : le JPEG ne gère pas la transparence).
+    const formats = image.formats ?? config.formats
+
     const produced = {}
     for (const width of targets) {
-      for (const format of config.formats) {
+      for (const format of formats) {
         const name = `${image.id}-${width}.${format}`
         const file = join(outDir, name)
         if (ifMissing && (await exists(file))) continue
-        await sharp(buffer)
-          .resize({ width, withoutEnlargement: true })
+        const pipeline = sharp(buffer).resize({ width, withoutEnlargement: true })
+        // Le JPEG ne gère pas l'alpha : on aplatit sur le fond clair du site
+        // plutôt que de laisser Sharp produire des zones noires.
+        if (format === 'jpg' && meta.hasAlpha) {
+          pipeline.flatten({ background: '#fdfaf3' })
+        }
+        await pipeline
           .toFormat(format === 'jpg' ? 'jpeg' : format, {
             quality: quality[format],
             progressive: format === 'jpg',
@@ -88,7 +97,7 @@ async function run() {
       }
     }
     report.push(
-      `${image.id} — ${masterWidth}px source, largeurs : ${targets.join(', ')} (${config.formats.join('/')})${warning}`,
+      `${image.id} — ${masterWidth}px source, largeurs : ${targets.join(', ')} (${formats.join('/')})${warning}`,
     )
   }
 

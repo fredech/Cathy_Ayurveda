@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { contact, contactPage, hasContact, site } from '../lib/data'
+import { contact, contactPage, site } from '../lib/data'
 import { Button } from '../components/ui/Button'
 import { CheckboxField, SelectField, TextAreaField, TextField } from '../components/ui/Field'
 import { MissingData } from '../components/ui/MissingData'
@@ -29,19 +29,14 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 /**
  * Formulaire de contact.
  *
- * Il n'y a pas de backend : la validation est faite côté client, puis le
- * message est transmis par le client de messagerie de la personne
- * (`mailto:`). Tant que l'adresse de réception n'est pas renseignée dans
- * `data/content/site.json`, le formulaire l'indique clairement au lieu de
- * laisser croire à un envoi.
- *
- * TODO : raccorder un service d'envoi (endpoint) et renseigner l'adresse de
- * réception — voir le README.
+ * La validation est faite côté client, puis le message est envoyé à
+ * `/api/contact` (fonction Vercel dans `api/contact.ts`), qui le transmet par
+ * Resend à l'adresse de réception. La clé Resend reste côté serveur.
  */
 export function ContactForm() {
   const [values, setValues] = useState<FormValues>(EMPTY)
   const [errors, setErrors] = useState<FormErrors>({})
-  const [status, setStatus] = useState<'idle' | 'sent'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const formRef = useRef<HTMLFormElement | null>(null)
   const { labels } = contactPage
 
@@ -49,6 +44,9 @@ export function ContactForm() {
     setValues((previous) => ({ ...previous, [key]: value }))
     if (errors[key]) {
       setErrors((previous) => ({ ...previous, [key]: undefined }))
+    }
+    if (status === 'sent' || status === 'error') {
+      setStatus('idle')
     }
   }
 
@@ -62,12 +60,15 @@ export function ContactForm() {
     return next
   }
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (status === 'sending') return
+
     const found = validate(values)
     setErrors(found)
 
     if (Object.keys(found).length > 0) {
+      setStatus('idle')
       // Amène la personne au premier champ à corriger.
       window.requestAnimationFrame(() => {
         const firstInvalid = formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')
@@ -76,26 +77,23 @@ export function ContactForm() {
       return
     }
 
-    setStatus('sent')
+    setStatus('sending')
 
-    // Aucun backend : on passe la main au client de messagerie, si une adresse
-    // de réception existe.
-    if (hasContact.email && contact.email) {
-      const body = [
-        `${labels.name} : ${values.name}`,
-        `${labels.email} : ${values.email}`,
-        values.phone ? `${labels.phone} : ${values.phone}` : null,
-        `${labels.subject} : ${values.subject}`,
-        '',
-        values.message,
-      ]
-        .filter(Boolean)
-        .join('\n')
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      })
 
-      const href = `mailto:${contact.email}?subject=${encodeURIComponent(
-        `[Site] ${values.subject}`,
-      )}&body=${encodeURIComponent(body)}`
-      window.location.href = href
+      if (!response.ok) {
+        throw new Error(`Envoi refusé (${response.status}).`)
+      }
+
+      setValues(EMPTY)
+      setStatus('sent')
+    } catch {
+      setStatus('error')
     }
   }
 
@@ -106,26 +104,35 @@ export function ContactForm() {
       <h2 className="text-2xl text-text">{contactPage.formTitle}</h2>
       <p className="mt-3 max-w-xl text-sm text-text-muted">{contactPage.formIntro}</p>
 
-      {status === 'sent' && !hasContact.email ? (
-        <div className="mt-8 rounded-lg border border-dashed border-field-line bg-surface p-6">
-          <h3 className="text-lg text-text">{contactPage.noBackend.title}</h3>
-          <p className="mt-3 text-sm text-text-muted">{contactPage.noBackend.text}</p>
-          <div className="mt-4">
-            <MissingData label="adresse e-mail de réception du formulaire" />
+      <div aria-live="polite">
+        {status === 'sent' ? (
+          <div className="mt-8 rounded-lg border border-line bg-accent-soft p-6 text-sm text-text">
+            <strong className="block font-display text-lg font-normal">
+              {contactPage.success.title}
+            </strong>
+            <p className="m-0 mt-2">{contactPage.success.text}</p>
           </div>
-        </div>
-      ) : null}
+        ) : null}
 
-      {status === 'sent' && hasContact.email ? (
-        <div className="mt-8 rounded-lg border border-line bg-accent-soft p-6 text-sm text-text">
-          <strong className="block font-display text-lg font-normal">
-            {contactPage.success.title}
-          </strong>
-          <p className="m-0 mt-2">{contactPage.success.text}</p>
-        </div>
-      ) : null}
+        {status === 'error' ? (
+          <div
+            role="alert"
+            className="mt-8 rounded-lg border border-pitta/40 bg-surface p-6 text-sm text-text"
+          >
+            <strong className="block font-display text-lg font-normal">
+              {contactPage.error.title}
+            </strong>
+            <p className="m-0 mt-2">{contactPage.error.text}</p>
+            {contact.email ? (
+              <p className="m-0 mt-2">
+                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              </p>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
 
-      <form ref={formRef} className="mt-8 grid gap-6" onSubmit={onSubmit} noValidate>
+      <form ref={formRef} className="mt-8 grid gap-6" onSubmit={onSubmit} noValidate aria-busy={status === 'sending'}>
         {errorCount > 0 ? (
           <div
             role="alert"
@@ -197,8 +204,8 @@ export function ContactForm() {
         />
 
         <div className="flex flex-col items-start gap-4">
-          <Button type="submit" variant="primary" size="lg">
-            {labels.submit}
+          <Button type="submit" variant="primary" size="lg" disabled={status === 'sending'}>
+            {status === 'sending' ? contactPage.sending : labels.submit}
           </Button>
           <p className="m-0 text-xs text-text-muted">{site.disclaimer}</p>
         </div>

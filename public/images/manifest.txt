@@ -1,5 +1,5 @@
 # Généré par scripts/images.mjs — ne pas modifier à la main
-portrait — 564px source, largeurs : 400, 480, 564 (avif/webp/jpg)
+hero — 1086px source, largeurs : 400, 480, 640, 768, 1024, 1086 (webp)
 spices — 1024px source, largeurs : 400, 480, 640, 768, 1024 (avif/webp/jpg) ⚠ source tronquée, ré-export recommandé
 banner — 1024px source, largeurs : 400, 480, 640, 768, 1024 (avif/webp/jpg)
 wheel-reference — ignorée (reference)

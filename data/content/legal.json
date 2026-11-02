@@ -73,7 +73,7 @@
         {
           "type": "list",
           "items": [
-            "Mon fournisseur de messagerie électronique : TODO : nom du service et pays d'hébergement",
+            "Mon fournisseur d'envoi d'e-mails : Resend (États-Unis)",
             "L'hébergeur du site : TODO : nom de l'hébergeur et pays d'hébergement"
           ]
         },

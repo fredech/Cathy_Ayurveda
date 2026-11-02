@@ -9,11 +9,11 @@ import { useEffect } from 'react'
 import { pageMeta, site } from './data'
 import {
   HERO_IMAGE_SIZES,
+  heroImage,
   imageUrl,
   largestWidth,
   ogImage,
   ogImageAlt,
-  portraitImage,
 } from './images'
 
 export interface PageSeo {
@@ -57,13 +57,14 @@ export function getPageSeo(path: string): PageSeo {
  * relancer une requête (c'était la cause d'un LCP dégradé auparavant).
  */
 function heroImagePreload(): string {
-  const avif = portraitImage.sources.find((source) => source.type === 'image/avif')
-  if (!avif) return ''
+  const source = heroImage.sources[0]
+  if (!source) return ''
 
-  const href = imageUrl(portraitImage, largestWidth(portraitImage), 'avif')
+  const format = source.type === 'image/avif' ? 'avif' : 'webp'
+  const href = imageUrl(heroImage, largestWidth(heroImage), format)
   return [
-    `<link rel="preload" as="image" type="image/avif" fetchpriority="high" href="${href}"`,
-    `imagesrcset="${avif.srcset}" imagesizes="${HERO_IMAGE_SIZES}" />`,
+    `<link rel="preload" as="image" type="${source.type}" fetchpriority="high" href="${href}"`,
+    `imagesrcset="${source.srcset}" imagesizes="${HERO_IMAGE_SIZES}" />`,
   ].join(' ')
 }
 

@@ -255,7 +255,8 @@ export interface ContactContent {
   subjects: string[]
   errors: { name: string; email: string; subject: string; message: string; consent: string }
   success: { title: string; text: string }
-  noBackend: { title: string; text: string }
+  sending: string
+  error: { title: string; text: string }
   fields: {
     responseTimeLabel: string
     bookingLabel: string

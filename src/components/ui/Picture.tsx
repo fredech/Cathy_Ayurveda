@@ -17,9 +17,10 @@ function srcsetFor(image: SiteImage, format: 'avif' | 'webp' | 'jpg', widths: nu
 }
 
 /**
- * Image responsive au format `<picture>` : AVIF puis WebP puis JPEG, avec des
- * dimensions explicites (pas de décalage de mise en page) et un chargement
- * différé sauf pour l'image principale.
+ * Image responsive au format `<picture>` : AVIF puis WebP puis le format de
+ * repli disponible (JPEG, ou WebP si l'image conserve de la transparence),
+ * avec des dimensions explicites (pas de décalage de mise en page) et un
+ * chargement différé sauf pour l'image principale.
  */
 export function Picture({
   image,
@@ -32,12 +33,17 @@ export function Picture({
   const available = widths ? image.widths.filter((width) => widths.includes(width)) : image.widths
   const list = available.length > 0 ? available : image.widths
   const fallbackWidth = list[Math.min(1, list.length - 1)]
-  const fallbackSrc = `/images/${image.id}-${fallbackWidth}.jpg`
+  const fallbackFormat = image.formats.includes('jpg') ? 'jpg' : image.formats[0]
+  const fallbackSrc = `/images/${image.id}-${fallbackWidth}.${fallbackFormat}`
 
   return (
     <picture className={className}>
-      <source type="image/avif" srcSet={srcsetFor(image, 'avif', list)} sizes={sizes} />
-      <source type="image/webp" srcSet={srcsetFor(image, 'webp', list)} sizes={sizes} />
+      {image.formats.includes('avif') ? (
+        <source type="image/avif" srcSet={srcsetFor(image, 'avif', list)} sizes={sizes} />
+      ) : null}
+      {image.formats.includes('webp') ? (
+        <source type="image/webp" srcSet={srcsetFor(image, 'webp', list)} sizes={sizes} />
+      ) : null}
       <img
         src={fallbackSrc}
         alt={image.alt}

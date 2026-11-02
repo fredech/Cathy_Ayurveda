@@ -3,7 +3,7 @@
  * `public/images/`. Les recadrages, largeurs et textes alternatifs sont
  * décrits dans `data/content/images.json`.
  */
-import config from '../../data/content/images.json'
+import configJson from '../../data/content/images.json'
 
 export interface ImageSource {
   type: 'image/avif' | 'image/webp' | 'image/jpeg'
@@ -18,20 +18,44 @@ export interface SiteImage {
   caption: string | null
   /** Largeurs réellement disponibles, de la plus petite à la plus grande. */
   widths: number[]
-  /** Source de repli (JPEG), largeur intermédiaire. */
+  /** Formats générés pour cette image (certaines images n'existent qu'en WebP). */
+  formats: Format[]
+  /** Source de repli, dans le premier format disponible. */
   src: string
   /** Formats modernes, dans l'ordre de préférence. */
   sources: ImageSource[]
   ratio: number
 }
 
-const MIME = {
+type Format = 'avif' | 'webp' | 'jpg'
+
+const MIME: Record<Format, 'image/avif' | 'image/webp' | 'image/jpeg'> = {
   avif: 'image/avif',
   webp: 'image/webp',
   jpg: 'image/jpeg',
-} as const
+}
 
-type Format = keyof typeof MIME
+interface ImageConfigEntry {
+  id: string
+  usage: string
+  source: string
+  crop: { x: number; y: number; width: number; height: number } | null
+  width: number
+  height: number
+  formats?: Format[]
+  alt: string | null
+  caption: string | null
+  note: string
+}
+
+interface ImagesConfig {
+  outputDir: string
+  widths: number[]
+  formats: Format[]
+  images: ImageConfigEntry[]
+}
+
+const config = configJson as ImagesConfig
 
 function buildImage(id: string, widthsOverride?: number[]): SiteImage {
   const raw = config.images.find((image) => image.id === id)
@@ -40,6 +64,9 @@ function buildImage(id: string, widthsOverride?: number[]): SiteImage {
 
   const widths = (widthsOverride ?? config.widths).filter((width) => width <= raw.width)
   if (!widths.includes(raw.width)) widths.push(raw.width)
+
+  const formats = raw.formats ?? config.formats
+  const fallbackFormat = formats.includes('jpg') ? 'jpg' : formats[0]
 
   const srcsetFor = (format: Format) =>
     widths.map((width) => `/images/${id}-${width}.${format} ${width}w`).join(', ')
@@ -53,17 +80,20 @@ function buildImage(id: string, widthsOverride?: number[]): SiteImage {
     alt: raw.alt ?? '',
     caption: raw.caption ?? null,
     widths,
-    src: `/images/${id}-${fallbackWidth}.jpg`,
-    sources: (['avif', 'webp'] as Format[]).map((format) => ({
-      type: MIME[format],
-      srcset: srcsetFor(format),
-    })),
+    formats,
+    src: `/images/${id}-${fallbackWidth}.${fallbackFormat}`,
+    sources: formats
+      .filter((format) => format !== 'jpg')
+      .map((format) => ({
+        type: MIME[format],
+        srcset: srcsetFor(format),
+      })),
     ratio: raw.width / raw.height,
   }
 }
 
-/** Portrait de Cathy (découpe du visuel de marque). */
-export const portraitImage = buildImage('portrait')
+/** Visuel principal de la page d'accueil (détouré, transparence conservée). */
+export const heroImage = buildImage('hero')
 /** Bol d'épices fourni. */
 export const spicesImage = buildImage('spices')
 /** Visuel de marque complet, réservé au partage social (Open Graph). */
@@ -73,10 +103,10 @@ export const ogImage = buildImage('banner')
 export const ogImageAlt = ogImage.alt
 
 /**
- * Largeur d'affichage du portrait principal dans l'en-tête de la page
- * d'accueil. La valeur est partagée entre le `<picture>` (attribut `sizes`) et
- * le préchargement, pour que le navigateur choisisse toujours la même source.
- * Sur mobile, le portrait est limité par `max-w-md` (28 rem) ; sur grand écran,
+ * Largeur d'affichage du visuel principal dans l'en-tête de la page d'accueil.
+ * La valeur est partagée entre le `<picture>` (attribut `sizes`) et le
+ * préchargement, pour que le navigateur choisisse toujours la même source.
+ * Sur mobile, le visuel est limité par `max-w-md` (28 rem) ; sur grand écran,
  * il occupe une colonne de la grille, plafonnée à 34 rem.
  */
 export const HERO_IMAGE_SIZES = '(min-width: 1024px) 34rem, (min-width: 672px) 28rem, 88vw'
@@ -90,4 +120,3 @@ export function imageUrl(image: SiteImage, width: number, format: 'avif' | 'webp
 export function largestWidth(image: SiteImage): number {
   return image.widths[image.widths.length - 1]
 }
-

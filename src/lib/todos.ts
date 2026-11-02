@@ -14,7 +14,6 @@ export interface TodoEntry {
 }
 
 export const TODOS: TodoEntry[] = [
-  { where: 'site.json → contact', what: 'Adresse e-mail professionnelle de contact.' },
   { where: 'site.json → contact', what: 'Numéro de téléphone et numéro WhatsApp.' },
   {
     where: 'site.json → contact',
@@ -62,8 +61,4 @@ export const TODOS: TodoEntry[] = [
     what: 'Identité de l’éditeur, hébergeur, durées de conservation, date de mise à jour et mentions légales.',
   },
   { where: 'home.json → hero', what: 'Portrait professionnel définitif si un autre visuel est souhaité.' },
-  {
-    where: 'Formulaire de contact',
-    what: 'Service d’envoi (endpoint ou service de formulaire) et adresse de réception.',
-  },
 ]
