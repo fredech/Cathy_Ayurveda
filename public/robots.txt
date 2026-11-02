@@ -1,0 +1,8 @@
+# Cathy Ayurveda — robots.txt
+# TODO : confirmer le nom de domaine définitif (voir data/content/site.json → "url").
+
+User-agent: *
+Allow: /
+
+# Aucune zone privée n'est exposée sur ce site.
+Sitemap: https://www.cathy-ayurveda.fr/sitemap.xml

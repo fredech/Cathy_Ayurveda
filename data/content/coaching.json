@@ -1,0 +1,102 @@
+{
+  "eyebrow": "Accompagnement",
+  "title": "Mon coaching",
+  "subtitle": "Deux façons de commencer : une séance ponctuelle pour faire le point, ou un accompagnement d'un mois avec un protocole détaillé.",
+  "intro": "L'Ayurveda ne se limite pas à des conseils généraux : il s'agit de regarder votre rythme, votre alimentation, votre sommeil et votre environnement pour proposer des ajustements réalistes, tenables sur le long terme.",
+  "medicalGuarantee": "Le protocole détaillé remis dans le cadre de l'accompagnement d'un mois est validé par un médecin agréé en Ayurveda.",
+  "sourceNote": "Structure des offres fournie par la praticienne. Durées, tarifs, formats et détail du protocole : TODO.",
+  "offers": [
+    {
+      "id": "seance",
+      "highlight": false,
+      "badge": null,
+      "name": "Séance ponctuelle",
+      "tagline": "Faire le point, repartir avec des premiers repères.",
+      "description": "Un rendez-vous unique pour découvrir votre profil ayurvédique, passer en revue vos habitudes et repartir avec des premières recommandations concrètes.",
+      "includes": [
+        "Un temps d'échange sur votre profil et votre rythme de vie",
+        "Une lecture de vos habitudes alimentaires, de sommeil et d'énergie",
+        "Des premières recommandations simples à mettre en place"
+      ],
+      "duration": null,
+      "format": null,
+      "price": null,
+      "ctaLabel": "Réserver une séance"
+    },
+    {
+      "id": "accompagnement",
+      "highlight": true,
+      "badge": "Le plus complet",
+      "name": "Accompagnement personnalisé d'un mois",
+      "tagline": "Un protocole détaillé, écrit pour vous, et un mois d'ajustements.",
+      "description": "Un accompagnement personnalisé sur un mois : bilan approfondi, protocole détaillé écrit et remis, puis suivi pour ajuster ce qui doit l'être. Le protocole est validé par un médecin agréé en Ayurveda.",
+      "includes": [
+        "Un bilan ayurvédique approfondi",
+        "Un protocole détaillé personnalisé, remis par écrit",
+        "Un accompagnement régulier pendant un mois",
+        "Des ajustements au fil des semaines",
+        "Un protocole validé par un médecin agréé en Ayurveda"
+      ],
+      "duration": null,
+      "format": null,
+      "price": null,
+      "ctaLabel": "Démarrer l'accompagnement"
+    }
+  ],
+  "process": {
+    "title": "Comment ça se passe",
+    "steps": [
+      {
+        "title": "Prise de contact",
+        "text": "Vous m'écrivez quelques lignes sur votre situation et vos attentes. Je vous propose un créneau."
+      },
+      {
+        "title": "Bilan ayurvédique",
+        "text": "Nous prenons le temps de regarder votre constitution, votre rythme et vos habitudes actuelles."
+      },
+      {
+        "title": "Protocole personnalisé",
+        "text": "Vous recevez un protocole écrit, détaillé et réaliste, adapté à votre quotidien. Il est validé par un médecin agréé en Ayurveda."
+      },
+      {
+        "title": "Suivi et ajustements",
+        "text": "Pendant un mois, nous ajustons ce qui doit l'être : le protocole vit avec vous, il ne reste pas théorique."
+      }
+    ]
+  },
+  "forWho": {
+    "title": "Pour qui ?",
+    "items": [
+      "Vous cherchez des repères concrets plutôt qu'une accumulation de conseils",
+      "Votre énergie, votre sommeil ou votre digestion manquent de régularité",
+      "Vous voulez adapter votre alimentation à votre profil",
+      "Vous traversez une période de transition et souhaitez être accompagné(e)"
+    ]
+  },
+  "faq": [
+    {
+      "question": "L'Ayurveda remplace-t-il un suivi médical ?",
+      "answer": "Non, jamais. L'Ayurveda est une approche de bien-être complémentaire. Elle ne pose pas de diagnostic et ne remplace ni un médecin, ni un traitement en cours. En cas de symptôme, consultez un professionnel de santé."
+    },
+    {
+      "question": "Comment se déroule une séance concrètement ?",
+      "answer": "TODO : la praticienne précise ici le déroulé exact, la durée, le lieu ou l'outil de visioconférence, et ce qu'il faut préparer."
+    },
+    {
+      "question": "Faut-il des connaissances en Ayurveda pour commencer ?",
+      "answer": "Non. Tout est expliqué pas à pas, avec des mots simples et des gestes du quotidien. Aucun prérequis n'est nécessaire."
+    },
+    {
+      "question": "Les séances sont-elles possibles à distance ?",
+      "answer": "TODO : indiquer si les séances et l'accompagnement sont proposés en visioconférence, en présentiel, ou les deux, et où."
+    },
+    {
+      "question": "Combien coûtent une séance et l'accompagnement ?",
+      "answer": "TODO : indiquer les tarifs de la séance ponctuelle et de l'accompagnement d'un mois, ainsi que les moyens de paiement."
+    },
+    {
+      "question": "Les produits conviennent-ils à tout le monde ?",
+      "answer": "Non. Les plantes et les huiles ne conviennent pas à toutes les situations. En cas de grossesse, d'allaitement, de traitement médicamenteux ou de maladie chronique, demandez l'avis d'un professionnel de santé."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cathy Ayurveda">
+  <rect width="64" height="64" rx="15" fill="#1f2a21" />
+  <path d="M32 51c0-15 8.5-25 21-27-1 15-9.5 25-21 27z" fill="#e0a483" />
+  <path d="M32 51C32 36 23.5 26 11 24c1 15 9.5 25 21 27z" fill="#b3c6a4" />
+  <path d="M32 53V31" stroke="#fdfaf3" stroke-width="2.4" stroke-linecap="round" />
+</svg>

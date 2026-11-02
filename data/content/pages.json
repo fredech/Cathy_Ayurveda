@@ -1,0 +1,30 @@
+{
+  "/": {
+    "title": "Cathy Ayurveda — Coaching ayurvédique et équilibre au quotidien",
+    "description": "Coaching ayurvédique avec Cathy, coach franco-indienne : la roue des doshas, un questionnaire d'auto-observation, des produits de soin naturels et un accompagnement personnalisé d'un mois."
+  },
+  "/roue-ayurvedique": {
+    "title": "La roue ayurvédique des doshas — Rythme circadien | Cathy Ayurveda",
+    "description": "Les six périodes de la journée selon l'Ayurveda : Kapha, Pitta et Vata. Une roue interactive pour aligner vos repas, votre activité et votre repos sur les cycles de la nature."
+  },
+  "/mon-dosha": {
+    "title": "Quelle est mon Dosha ? Questionnaire Vata, Pitta, Kapha | Cathy Ayurveda",
+    "description": "Douze questions d'auto-observation pour découvrir votre tendance dominante — Vata, Pitta ou Kapha — et les gestes qui soutiennent votre équilibre au quotidien."
+  },
+  "/produits": {
+    "title": "Les produits de soin — Huile capilaire, Ashwagandha, Triphala, Neem, Amla | Cathy Ayurveda",
+    "description": "Cinq soins et plantes traditionnels présentés simplement : origine, usage, précautions. Huile capilaire, Ashwagandha, Triphala, Neem et Amla."
+  },
+  "/coaching": {
+    "title": "Mon coaching — Séance ponctuelle ou accompagnement d'un mois | Cathy Ayurveda",
+    "description": "Une séance ponctuelle pour faire le point, ou un accompagnement personnalisé d'un mois avec un protocole détaillé validé par un médecin agréé en Ayurveda."
+  },
+  "/contact": {
+    "title": "Me contacter — Prendre rendez-vous | Cathy Ayurveda",
+    "description": "Écrivez-moi pour réserver une consultation ayurvédique, poser une question sur les produits ou démarrer un accompagnement personnalisé."
+  },
+  "/confidentialite": {
+    "title": "Politique de confidentialité (RGPD) | Cathy Ayurveda",
+    "description": "Comment les données personnelles transmises via ce site sont utilisées, combien de temps elles sont conservées et comment exercer vos droits."
+  }
+}

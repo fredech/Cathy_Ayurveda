@@ -1,0 +1,36 @@
+{
+  "lang": "fr",
+  "url": "https://www.cathy-ayurveda.fr",
+  "urlNote": "TODO : confirmer le nom de domaine définitif. Les URL canoniques, le sitemap, robots.txt et les balises Open Graph dépendent de cette valeur.",
+  "brand": {
+    "name": "Cathy Ayurveda",
+    "role": "Coach franco-indienne en Ayurveda",
+    "logoText": "Cathy Ayurveda",
+    "logoSub": "coach franco-indienne"
+  },
+  "hero": {
+    "baseline": "L'Ayurveda, une sagesse de plus de 5000 ans, adaptée à votre vie contemporaine.",
+    "claim": "Retrouvez l'équilibre grâce à l'Ayurveda."
+  },
+  "shortDescription": "Coaching ayurvédique : la roue des doshas, des soins, des produits naturels et un accompagnement personnalisé pour retrouver l'équilibre au quotidien.",
+  "contact": {
+    "email": null,
+    "phone": null,
+    "whatsapp": null,
+    "address": null,
+    "postalCode": null,
+    "city": null,
+    "country": "France",
+    "mapUrl": null,
+    "openingHours": null,
+    "responseTime": null,
+    "bookingUrl": null
+  },
+  "social": {
+    "instagram": null,
+    "facebook": null,
+    "youtube": null
+  },
+  "disclaimer": "Les prestations proposées sont des approches de bien-être complémentaires issues de la tradition ayurvédique. Elles ne constituent ni un diagnostic, ni un traitement médical et ne remplacent en aucun cas l'avis, le suivi ou les prescriptions d'un professionnel de santé.",
+  "medicalPartnerNote": "Le protocole détaillé remis dans le cadre de l'accompagnement d'un mois est validé par un médecin agréé en Ayurveda."
+}

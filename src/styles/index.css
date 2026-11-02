@@ -1,0 +1,414 @@
+@import 'tailwindcss';
+@import './fonts.css';
+
+/* ==========================================================================
+   Tokens de design (Tailwind CSS v4 — configuration en CSS)
+   --------------------------------------------------------------------------
+   Deux niveaux de tokens :
+   1. La palette brute (--color-cream-*, --color-clay-*, …) : usage décoratif.
+   2. Les tokens sémantiques (--color-bg, --color-text, --color-link, …) :
+      ce sont eux que les composants utilisent. Ils sont redéfinis en mode
+      sombre, ce qui évite de dupliquer les classes avec un variant dark:.
+   ========================================================================== */
+
+@theme {
+  /* Typographie ---------------------------------------------------------- */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Échelle fluide : de 375 px à 1440 px, sans media query. */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1.5;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --text-sm--line-height: 1.6;
+  --text-base: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --text-base--line-height: 1.65;
+  --text-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-lg--line-height: 1.55;
+  --text-xl: clamp(1.1875rem, 1.1rem + 0.4vw, 1.5rem);
+  --text-xl--line-height: 1.4;
+  --text-2xl: clamp(1.4375rem, 1.28rem + 0.7vw, 1.9375rem);
+  --text-2xl--line-height: 1.25;
+  --text-3xl: clamp(1.6875rem, 1.44rem + 1.1vw, 2.5rem);
+  --text-3xl--line-height: 1.18;
+  --text-4xl: clamp(2.0625rem, 1.62rem + 1.9vw, 3.375rem);
+  --text-4xl--line-height: 1.1;
+  --text-5xl: clamp(2.375rem, 1.76rem + 2.8vw, 4.25rem);
+  --text-5xl--line-height: 1.05;
+  --text-6xl: clamp(2.75rem, 1.8rem + 4.2vw, 5.5rem);
+  --text-6xl--line-height: 1.02;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Palette brute -------------------------------------------------------- */
+  --color-cream-50: #fdfaf3;
+  --color-cream-100: #f8f4ea;
+  --color-cream-200: #f1ead9;
+  --color-sand-300: #e2d8c4;
+  --color-sand-400: #cbbca0;
+
+  --color-forest-950: #12160f;
+  --color-forest-900: #1f2a21;
+  --color-forest-800: #2c3a2e;
+  --color-forest-700: #3f4f40;
+  --color-forest-600: #54604f;
+
+  --color-moss-200: #d6e0cb;
+  --color-moss-300: #b3c6a4;
+  --color-moss-500: #6f875c;
+  --color-moss-600: #55694a;
+  --color-moss-700: #3f5138;
+
+  --color-clay-100: #f7e6db;
+  --color-clay-200: #efcdb8;
+  --color-clay-300: #e0a483;
+  --color-clay-500: #b4552f;
+  --color-clay-600: #9c4a28;
+  --color-clay-700: #8c4520;
+
+  --color-turmeric-200: #f4e2b4;
+  --color-turmeric-400: #d9ad4a;
+  --color-turmeric-600: #9a6f16;
+
+  /* Sémantique — thème clair (valeurs par défaut) ------------------------ */
+  --color-bg: #fdfaf3;
+  --color-bg-alt: #f8f4ea;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1ead9;
+  --color-text: #1f2a21;
+  --color-text-muted: #54604f;
+  --color-text-invert: #fffdf7;
+  --color-line: #e2d8c4;
+  --color-line-strong: #d3c6ad;
+  --color-field-line: #9c8b66;
+  --color-accent: #b4552f;
+  --color-accent-text: #8c4520;
+  --color-accent-soft: #f7e6db;
+  --color-button-bg: #8c4520;
+  --color-button-text: #fffdf7;
+  --color-button-bg-hover: #753719;
+  --color-secondary-bg: #f1ead9;
+  --color-secondary-text: #2c3a2e;
+  --color-focus: #6b3410;
+  --color-kapha: #3f5f80;
+  --color-pitta: #a34c29;
+  --color-vata: #4c613f;
+
+  /* Rayons, ombres, rythme vertical ------------------------------------- */
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2.25rem;
+
+  --shadow-soft: 0 1px 2px -1px rgb(24 32 22 / 0.08), 0 8px 24px -12px rgb(24 32 22 / 0.14);
+  --shadow-lift: 0 2px 4px -2px rgb(24 32 22 / 0.1), 0 16px 40px -20px rgb(24 32 22 / 0.22);
+
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.5, 0.1, 0.2, 1);
+
+  --spacing-gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --spacing-section: clamp(3.5rem, 9vw, 7.5rem);
+  --spacing-header: 4.5rem;
+}
+
+/* Mode sombre doux : on redéfinit uniquement les tokens sémantiques. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --color-bg: #141813;
+    --color-bg-alt: #191e18;
+    --color-surface: #1d231c;
+    --color-surface-alt: #232a21;
+    --color-text: #efede3;
+    --color-text-muted: #b3bca9;
+    --color-text-invert: #141813;
+    --color-line: #333b31;
+    --color-line-strong: #414a3e;
+    --color-field-line: #5a6b53;
+    --color-accent: #dc8b62;
+    --color-accent-text: #e5a277;
+    --color-accent-soft: #2a2119;
+    --color-button-bg: #dc8b62;
+    --color-button-text: #1b1f19;
+    --color-button-bg-hover: #eba87f;
+    --color-secondary-bg: #232a21;
+    --color-secondary-text: #efede3;
+    --color-focus: #f0b088;
+    --color-kapha: #8fb0cc;
+    --color-pitta: #e09a74;
+    --color-vata: #a3bb95;
+  }
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #141813;
+  --color-bg-alt: #191e18;
+  --color-surface: #1d231c;
+  --color-surface-alt: #232a21;
+  --color-text: #efede3;
+  --color-text-muted: #b3bca9;
+  --color-text-invert: #141813;
+  --color-line: #333b31;
+  --color-line-strong: #414a3e;
+  --color-field-line: #5a6b53;
+  --color-accent: #dc8b62;
+  --color-accent-text: #e5a277;
+  --color-accent-soft: #2a2119;
+  --color-button-bg: #dc8b62;
+  --color-button-text: #1b1f19;
+  --color-button-bg-hover: #eba87f;
+  --color-secondary-bg: #232a21;
+  --color-secondary-text: #efede3;
+  --color-focus: #f0b088;
+  --color-kapha: #8fb0cc;
+  --color-pitta: #e09a74;
+  --color-vata: #a3bb95;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* ==========================================================================
+   Styles de base
+   ========================================================================== */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--spacing-header) + 1rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.65;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Grain de papier : posé derrière le contenu, jamais sur le texte. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E");
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) body::before {
+      mix-blend-mode: screen;
+      opacity: 0.2;
+    }
+  }
+
+  [data-theme='dark'] body::before {
+    mix-blend-mode: screen;
+    opacity: 0.2;
+  }
+
+  /* Titres : serif optiquement dimensionné, léger, très lisible. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.08;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: var(--color-accent-text);
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: from-font;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  ::selection {
+    background-color: var(--color-accent-soft);
+    color: var(--color-text);
+  }
+
+  img,
+  svg,
+  picture,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Cibles tactiles : 44 px minimum (WCAG 2.2, 2.5.8). */
+  button,
+  [role='button'],
+  summary,
+  a[data-tap-target] {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+}
+
+/* ==========================================================================
+   Utilitaires composés
+   ========================================================================== */
+@utility container-page {
+  width: 100%;
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: var(--spacing-gutter);
+}
+
+@utility container-prose {
+  width: 100%;
+  max-width: 44rem;
+  margin-inline: auto;
+  padding-inline: var(--spacing-gutter);
+}
+
+/* Masque en arche pour les images éditoriales. */
+@utility arch-mask {
+  border-radius: 50% 50% 1.5rem 1.5rem / 44% 44% 1.5rem 1.5rem;
+  overflow: hidden;
+}
+
+@utility pill-mask {
+  border-radius: 999rem;
+  overflow: hidden;
+}
+
+/* Les sections basses sont peintes à la demande : gain de rendu initial sans
+   casser la recherche dans la page ni l'accessibilité. */
+@utility defer-paint {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 44rem;
+}
+
+/* ==========================================================================
+   Animations : apparitions douces au défilement.
+   - CSS scroll-driven animations quand le navigateur les supporte ;
+   - repli JavaScript progressif (classe .is-visible) sinon.
+   Tout est neutralisé si l'utilisateur préfère réduire les animations.
+   ========================================================================== */
+@layer utilities {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-duration: auto;
+      animation-timeline: view();
+      animation-range: entry 4% cover 26%;
+    }
+  }
+
+  .js-reveal {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition:
+      opacity 520ms var(--ease-out-soft),
+      transform 520ms var(--ease-out-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  /* Sans JavaScript, aucun contenu ne doit rester masqué. */
+  [data-js='off'] .js-reveal,
+  html:not([data-js='on']) .js-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @keyframes reveal-in {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes soft-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-soft-fade {
+    animation: soft-fade 420ms var(--ease-out-soft) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .js-reveal,
+    .js-reveal.is-visible,
+    .animate-soft-fade {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  }
+}

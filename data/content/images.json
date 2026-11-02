@@ -1,0 +1,73 @@
+{
+  "outputDir": "public/images",
+  "widths": [400, 480, 640, 768, 1024, 1200],
+  "formats": ["avif", "webp", "jpg"],
+  "images": [
+    {
+      "id": "portrait",
+      "usage": "photo",
+      "source": "data/PHOTO-2026-10-15-09-51-49.jpg",
+      "crop": { "x": 460, "y": 0, "width": 564, "height": 572 },
+      "width": 564,
+      "height": 572,
+      "alt": "Cathy, coach franco-indienne en Ayurveda, souriante auprès de plantes vertes.",
+      "caption": null,
+      "note": "Découpe de la partie droite du visuel de marque fourni (le texte est imprimé dans la partie gauche, il a donc été écarté pour éviter du texte en image). Alt à valider par la praticienne."
+    },
+    {
+      "id": "spices",
+      "usage": "photo",
+      "source": "data/PHOTO-2026-09-23-23-00-31.jpg",
+      "crop": null,
+      "width": 1024,
+      "height": 559,
+      "alt": "Épices et graines entières disposées dans un bol en bois.",
+      "caption": "Épices et plantes, matière première des soins ayurvédiques.",
+      "note": "Photo fournie, sans watermark. Alt à valider par la praticienne."
+    },
+    {
+      "id": "banner",
+      "usage": "og",
+      "source": "data/PHOTO-2026-10-15-09-51-49.jpg",
+      "crop": { "x": 0, "y": 17, "width": 1024, "height": 537 },
+      "width": 1024,
+      "height": 537,
+      "alt": "Visuel de marque Cathy Ayurveda, coach franco-indienne.",
+      "caption": null,
+      "note": "Utilisé uniquement comme image de partage (Open Graph) : le texte est lisible à cette taille."
+    },
+    {
+      "id": "wheel-reference",
+      "usage": "reference",
+      "source": "data/PHOTO-2026-10-15-09-57-09.jpg",
+      "crop": null,
+      "width": 837,
+      "height": 2048,
+      "alt": "Capture du visuel « La roue ayurvédique des doshas ».",
+      "caption": null,
+      "note": "Source de contenu uniquement : la roue est reconstruite en SVG/HTML interactif dans /roue-ayurvedique. L'image n'est pas publiée."
+    },
+    {
+      "id": "stock-1",
+      "usage": "excluded",
+      "source": "data/PHOTO-2026-09-23-22-59-32.jpg",
+      "crop": null,
+      "width": 540,
+      "height": 1320,
+      "alt": null,
+      "caption": null,
+      "note": "Aperçu d'image de banque avec watermark « magnific.com ». Non publiée : TODO remplacer par une photo originale ou une licence."
+    },
+    {
+      "id": "stock-2",
+      "usage": "excluded",
+      "source": "data/PHOTO-2026-09-23-22-59-48.jpg",
+      "crop": null,
+      "width": 540,
+      "height": 1320,
+      "alt": null,
+      "caption": null,
+      "note": "Aperçu d'image de banque avec watermark « shutterstock.com ». Non publiée : TODO remplacer par une photo originale ou une licence."
+    }
+  ]
+}

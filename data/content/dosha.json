@@ -1,0 +1,163 @@
+{
+  "eyebrow": "Auto-observation",
+  "title": "Quelle est mon Dosha ?",
+  "subtitle": "Un questionnaire d'auto-observation pour découvrir votre tendance dominante : Vata, Pitta ou Kapha.",
+  "intro": "Chaque personne est un mélange unique des trois doshas. Ce questionnaire vous aide à repérer les tendances les plus présentes chez vous, pour mieux comprendre vos besoins et adapter votre quotidien.",
+  "disclaimer": "Ce questionnaire est éducatif et indicatif. Il ne s'agit pas d'un diagnostic : seul un praticien formé peut établir un bilan ayurvédique complet, et seul un médecin peut poser un diagnostic médical.",
+  "sourceNote": "Questionnaire rédigé à partir des principes classiques de l'Ayurveda (qualités des trois doshas). Validation par la praticienne : TODO.",
+  "questions": [
+    {
+      "id": "morphologie",
+      "label": "Ma silhouette",
+      "options": [
+        { "dosha": "vata", "label": "Fine et légère, j'ai du mal à prendre du poids" },
+        { "dosha": "pitta", "label": "Moyenne et athlétique, je prends et je perds facilement" },
+        { "dosha": "kapha", "label": "Plus solide et ronde, je prends du poids facilement" }
+      ]
+    },
+    {
+      "id": "peau",
+      "label": "Ma peau",
+      "options": [
+        { "dosha": "vata", "label": "Sèche, fine, souvent fraîche" },
+        { "dosha": "pitta", "label": "Sensible, chaude, réactive" },
+        { "dosha": "kapha", "label": "Douce, plus épaisse, parfois grasse" }
+      ]
+    },
+    {
+      "id": "cheveux",
+      "label": "Mes cheveux",
+      "options": [
+        { "dosha": "vata", "label": "Secs, fins, cassants" },
+        { "dosha": "pitta", "label": "Fins, sensibles, blanchissent tôt" },
+        { "dosha": "kapha", "label": "Épais, denses, ont tendance à regraisser vite" }
+      ]
+    },
+    {
+      "id": "appetit",
+      "label": "Mon appétit",
+      "options": [
+        { "dosha": "vata", "label": "Irrégulier, j'oublie parfois de manger" },
+        { "dosha": "pitta", "label": "Fort, je supporte mal de sauter un repas" },
+        { "dosha": "kapha", "label": "Stable mais discret, je peux sauter un repas sans gêne" }
+      ]
+    },
+    {
+      "id": "digestion",
+      "label": "Ma digestion",
+      "options": [
+        { "dosha": "vata", "label": "Irrégulière, ballonnements, sensation de gaz" },
+        { "dosha": "pitta", "label": "Rapide et forte, parfois des sensations d'acidité" },
+        { "dosha": "kapha", "label": "Lente, sensation de lourdeur après les repas" }
+      ]
+    },
+    {
+      "id": "sommeil",
+      "label": "Mon sommeil",
+      "options": [
+        { "dosha": "vata", "label": "Léger, quelques réveils dans la nuit" },
+        { "dosha": "pitta", "label": "Correct, mais je me couche tard et je dors peu" },
+        { "dosha": "kapha", "label": "Profond, j'ai du mal à émerger le matin" }
+      ]
+    },
+    {
+      "id": "temperature",
+      "label": "Ma température",
+      "options": [
+        { "dosha": "vata", "label": "J'ai souvent froid, surtout aux extrémités" },
+        { "dosha": "pitta", "label": "J'ai souvent chaud" },
+        { "dosha": "kapha", "label": "Plutôt stable, j'aime la chaleur" }
+      ]
+    },
+    {
+      "id": "energie",
+      "label": "Mon énergie dans la journée",
+      "options": [
+        { "dosha": "vata", "label": "En dents de scie, des élans puis des creux" },
+        { "dosha": "pitta", "label": "Intense et ciblée, je vais au bout des choses" },
+        { "dosha": "kapha", "label": "Régulière, avec un ralentissement en fin de journée" }
+      ]
+    },
+    {
+      "id": "rythme",
+      "label": "Mon rythme naturel",
+      "options": [
+        { "dosha": "vata", "label": "Rapide, j'aime bouger, changer, découvrir" },
+        { "dosha": "pitta", "label": "Déterminé, j'aime organiser et décider" },
+        { "dosha": "kapha", "label": "Calme et posé, j'aime les routines et la stabilité" }
+      ]
+    },
+    {
+      "id": "stress",
+      "label": "Sous stress",
+      "options": [
+        { "dosha": "vata", "label": "Je m'inquiète, je m'agite, je dors mal" },
+        { "dosha": "pitta", "label": "Je m'irrite, je deviens critique ou impatient" },
+        { "dosha": "kapha", "label": "Je me replie, je ralentis, j'ai besoin de temps" }
+      ]
+    },
+    {
+      "id": "apprentissage",
+      "label": "Quand j'apprends",
+      "options": [
+        { "dosha": "vata", "label": "Vite, avec enthousiasme, puis j'oublie vite" },
+        { "dosha": "pitta", "label": "Avec logique et précision" },
+        { "dosha": "kapha", "label": "Lentement, mais je retiens longtemps" }
+      ]
+    },
+    {
+      "id": "climat",
+      "label": "Le climat où je me sens le mieux",
+      "options": [
+        { "dosha": "vata", "label": "Chaud et humide" },
+        { "dosha": "pitta", "label": "Frais et tempéré" },
+        { "dosha": "kapha", "label": "Sec et ensoleillé" }
+      ]
+    }
+  ],
+  "profiles": {
+    "vata": {
+      "name": "Vata",
+      "elements": "Air et éther",
+      "qualities": "Léger, sec, froid, mobile, subtil",
+      "balanced": "Créativité, enthousiasme, souplesse, rapidité d'esprit",
+      "imbalance": "Agitation, sommeil léger, digestion irrégulière, sensation de froid",
+      "advice": [
+        "Des horaires réguliers pour les repas et le coucher",
+        "Des plats chauds, cuits et nourrissants",
+        "De la chaleur : vêtements, boissons, ambiance",
+        "Des temps de repos et de respiration, sans culpabilité",
+        "Un rythme plus lent dans les semaines chargées"
+      ]
+    },
+    "pitta": {
+      "name": "Pitta",
+      "elements": "Feu et eau",
+      "qualities": "Chaud, pénétrant, léger, fluide",
+      "balanced": "Clarté, détermination, concentration, digestion solide",
+      "imbalance": "Irritabilité, sensation de chaleur, acidité, surmenage",
+      "advice": [
+        "Ne pas sauter de repas, garder un rythme alimentaire stable",
+        "Privilégier les saveurs douces, fraîches et un peu amères",
+        "Des pauses réelles dans la journée, loin des écrans",
+        "De la fraîcheur : nature, eau, espaces calmes",
+        "Relâcher la recherche de performance"
+      ]
+    },
+    "kapha": {
+      "name": "Kapha",
+      "elements": "Terre et eau",
+      "qualities": "Lourd, froid, humide, stable, doux",
+      "balanced": "Calme, endurance, stabilité, fidélité",
+      "imbalance": "Lenteur, sensation de lourdeur, envie de dormir, congestion",
+      "advice": [
+        "Du mouvement quotidien, idéalement le matin",
+        "Des repas plus légers, chauds et peu sucrés",
+        "De la variété et de la nouveauté pour sortir de l'inertie",
+        "Se lever tôt et éviter les grasses matinées longues",
+        "De la chaleur sèche, de l'air et de la stimulation douce"
+      ]
+    }
+  },
+  "mixedNote": "Vos réponses sont réparties de façon assez équilibrée : vous êtes probablement un profil à dominante mixte (par exemple Vata-Pitta ou Pitta-Kapha). C'est fréquent, et un bilan personnalisé permet d'affiner ce qui domine selon les saisons et les périodes de vie."
+}

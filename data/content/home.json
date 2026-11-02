@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "eyebrow": "Coach franco-indienne en Ayurveda",
+    "title": "Retrouvez l'équilibre grâce à l'Ayurveda",
+    "text": "L'Ayurveda, une sagesse de plus de 5000 ans, adaptée à votre vie contemporaine.",
+    "primaryCta": { "label": "Réserver une consultation", "href": "/contact" },
+    "secondaryCta": { "label": "Découvrir mon dosha", "href": "/mon-dosha" },
+    "imageCaption": "Portrait de Cathy — TODO : remplacer par un portrait professionnel récent si besoin."
+  },
+  "pillars": {
+    "title": "Une approche simple, tenable, personnalisée",
+    "items": [
+      {
+        "title": "5000 ans d'observation",
+        "text": "L'Ayurveda propose une lecture du vivant fondée sur l'observation : les doshas, les saisons, les cycles de la journée.",
+        "illustration": "leaf"
+      },
+      {
+        "title": "Adapté à votre quotidien",
+        "text": "Pas de régime exigeant ni de promesse miracle : des ajustements réalistes, calibrés sur votre rythme et vos contraintes.",
+        "illustration": "sun"
+      },
+      {
+        "title": "Un cadre sérieux",
+        "text": "Le protocole remis dans l'accompagnement d'un mois est validé par un médecin agréé en Ayurveda.",
+        "illustration": "shield"
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "Philosophie",
+    "title": "Comprendre votre terrain, puis avancer pas à pas",
+    "paragraphs": [
+      "En Ayurveda, il n'existe pas de solution unique : chaque personne est un mélange singulier de Vata, Pitta et Kapha. Le travail consiste d'abord à observer votre constitution et vos habitudes, sans jugement.",
+      "Viennent ensuite les ajustements : le rythme des repas, la qualité du sommeil, la place du mouvement, les soins. Des gestes modestes, choisis parce qu'ils sont tenables chez vous, et non parce qu'ils sont à la mode.",
+      "Ce site rassemble des repères pour comprendre cette approche : la roue des doshas, un questionnaire d'auto-observation, les soins et les plantes, et les formules d'accompagnement."
+    ],
+    "sourceNote": "Texte rédigé à partir du positionnement fourni (visuel de marque). Relecture et validation par la praticienne : TODO."
+  },
+  "closing": {
+    "title": "Un premier échange suffit pour commencer",
+    "text": "Si vous ne savez pas quelle formule choisir, écrivez-moi : nous regardons ensemble ce qui correspond à votre situation.",
+    "ctaLabel": "Me contacter"
+  }
+}

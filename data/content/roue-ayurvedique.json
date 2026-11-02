@@ -1,0 +1,71 @@
+{
+  "eyebrow": "Rythme circadien",
+  "title": "La roue ayurvédique des doshas",
+  "subtitle": "Alignez vos habitudes quotidiennes avec les cycles de l'énergie de la nature.",
+  "slogan": "Équilibrez vos doshas • Vivez en harmonie",
+  "intro": "La journée se divise en six périodes de quatre heures, chacune gouvernée par un dosha. En accordant vos repas, votre activité et votre repos à ces cycles, vous soutenez votre énergie naturellement.",
+  "instruction": "Choisissez une période pour découvrir ce que la tradition ayurvédique recommande.",
+  "sourceNote": "Textes transcrits depuis le visuel fourni (data/PHOTO-2026-10-15-09-57-09.jpg). Relecture par la praticienne : TODO.",
+  "slots": [
+    {
+      "id": "kapha-matin",
+      "start": 6,
+      "end": 10,
+      "dosha": "kapha",
+      "timeLabel": "6h00 – 10h00",
+      "doshaLabel": "Kapha",
+      "title": "Temps de la stabilité",
+      "text": "Énergie lourde, calme et stable. Idéal pour l'exercice, le réveil en douceur et un petit-déjeuner léger."
+    },
+    {
+      "id": "pitta-midi",
+      "start": 10,
+      "end": 14,
+      "dosha": "pitta",
+      "timeLabel": "10h00 – 14h00",
+      "doshaLabel": "Pitta",
+      "title": "Temps de l'action",
+      "text": "Pic métabolique et feu digestif (Agni). C'est le meilleur moment pour votre repas principal."
+    },
+    {
+      "id": "vata-apresmidi",
+      "start": 14,
+      "end": 18,
+      "dosha": "vata",
+      "timeLabel": "14h00 – 18h00",
+      "doshaLabel": "Vata",
+      "title": "Temps de la créativité",
+      "text": "Énergie créative, active. Idéal pour le travail concentré, la communication et le mouvement."
+    },
+    {
+      "id": "kapha-soir",
+      "start": 18,
+      "end": 22,
+      "dosha": "kapha",
+      "timeLabel": "18h00 – 22h00",
+      "doshaLabel": "Kapha",
+      "title": "Temps du lâcher-prise",
+      "text": "Descente de l'énergie, installation du calme. Idéal pour un dîner digeste et une détente paisible."
+    },
+    {
+      "id": "pitta-nuit",
+      "start": 22,
+      "end": 26,
+      "dosha": "pitta",
+      "timeLabel": "22h00 – 2h00",
+      "doshaLabel": "Pitta",
+      "title": "Temps de la transformation",
+      "text": "Transformation, tri et détoxification du corps et de l'esprit — notamment pendant le sommeil."
+    },
+    {
+      "id": "vata-aube",
+      "start": 2,
+      "end": 6,
+      "dosha": "vata",
+      "timeLabel": "2h00 – 6h00",
+      "doshaLabel": "Vata",
+      "title": "Temps du mouvement",
+      "text": "Énergie spirituelle, subtile et légère. Le moment idéal pour se réveiller et se sentir léger."
+    }
+  ]
+}

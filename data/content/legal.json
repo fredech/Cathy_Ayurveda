@@ -1,0 +1,141 @@
+{
+  "title": "Politique de confidentialité",
+  "updated": "TODO : date de dernière mise à jour",
+  "intro": "Cette page explique quelles données personnelles sont collectées sur ce site, pourquoi, combien de temps elles sont conservées et comment exercer vos droits, conformément au Règlement général sur la protection des données (RGPD).",
+  "sourceNote": "Modèle rédigé pour ce site. À faire relire et compléter par la praticienne (mentions légales, hébergeur, durées de conservation) : TODO.",
+  "sections": [
+    {
+      "id": "responsable",
+      "title": "Responsable du traitement",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Le responsable du traitement des données est l'éditeur du site : TODO : nom ou raison sociale, adresse, numéro SIRET s'il existe, et adresse e-mail de contact."
+        }
+      ]
+    },
+    {
+      "id": "donnees",
+      "title": "Données collectées",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Le site collecte uniquement les données que vous saisissez volontairement dans le formulaire de contact, transmises par e-mail :"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Votre nom",
+            "Votre adresse e-mail",
+            "Votre numéro de téléphone, si vous le renseignez",
+            "Le motif de votre demande et le contenu de votre message",
+            "Votre accord pour le traitement de ces données"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Aucune donnée de santé n'est demandée sur ce site. Le site ne dépose aucun cookie publicitaire, aucun traceur d'audience et n'utilise aucun outil de mesure d'audience tiers."
+        }
+      ]
+    },
+    {
+      "id": "finalites",
+      "title": "Pourquoi ces données sont traitées",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Répondre à votre demande : base légale = votre consentement, exprimé en cochant la case du formulaire",
+            "Organiser un rendez-vous ou un accompagnement : base légale = l'exécution du contrat",
+            "Conserver une trace de nos échanges dans le cadre du suivi : base légale = l'intérêt légitime"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conservation",
+      "title": "Durée de conservation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "TODO : préciser la durée de conservation. À défaut de durée spécifique, les demandes de contact sont conservées trois ans à compter du dernier échange, puis supprimées."
+        }
+      ]
+    },
+    {
+      "id": "destinataires",
+      "title": "Destinataires et sous-traitants",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Vos données sont destinées à Cathy Ayurveda uniquement. Elles ne sont ni vendues, ni cédées. Elles peuvent transiter par :"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mon fournisseur de messagerie électronique : TODO : nom du service et pays d'hébergement",
+            "L'hébergeur du site : TODO : nom de l'hébergeur et pays d'hébergement"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Si un de ces prestataires est établi hors de l'Union européenne, les transferts sont encadrés par les garanties prévues par le RGPD."
+        }
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies et stockage local",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Ce site n'utilise ni cookie publicitaire, ni cookie de mesure d'audience, ni réseau social embarqué. Seul un stockage local technique est utilisé dans votre navigateur, pour mémoriser votre choix de thème clair ou sombre. Cette information reste sur votre appareil et n'est transmise à personne."
+        }
+      ]
+    },
+    {
+      "id": "droits",
+      "title": "Vos droits",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données. Pour l'exercer : TODO : adresse e-mail de contact."
+        },
+        {
+          "type": "paragraph",
+          "text": "Vous pouvez également introduire une réclamation auprès de la CNIL (Commission nationale de l'informatique et des libertés), 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, ou sur le site de la CNIL."
+        }
+      ]
+    },
+    {
+      "id": "securite",
+      "title": "Sécurité",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Le site est servi en HTTPS. Les messages reçus sont conservés dans une boîte e-mail protégée par un mot de passe fort et une double authentification lorsque le service le permet."
+        }
+      ]
+    },
+    {
+      "id": "mentions",
+      "title": "Mentions légales",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "TODO : compléter les mentions légales obligatoires (éditeur, statut juridique, immatriculation, hébergeur, assurance professionnelle s'il y a lieu)."
+        }
+      ]
+    },
+    {
+      "id": "sante",
+      "title": "Avertissement santé",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Les prestations proposées sont des approches de bien-être complémentaires issues de la tradition ayurvédique. Elles ne constituent ni un diagnostic, ni un traitement médical et ne remplacent en aucun cas l'avis, le suivi ou les prescriptions d'un professionnel de santé."
+        }
+      ]
+    }
+  ]
+}

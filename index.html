@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fdfaf3" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!--
+      Les balises de titre, description, canonical, Open Graph et les données
+      structurées sont générées page par page au moment du pré-rendu
+      (voir src/lib/seo.ts) puis injectées ici.
+    -->
+    <!--app-head-->
+
+    <!--
+      Polices : préchargées (découverte immédiate) mais en priorité basse, pour
+      qu'elles ne prennent pas la bande passante de l'image principale (LCP).
+      `font-display: swap` affiche le texte avant même leur arrivée.
+    -->
+    <link
+      rel="preload"
+      href="/fonts/fraunces-latin-normal.woff2"
+      as="font"
+      type="font/woff2"
+      fetchpriority="low"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-normal.woff2"
+      as="font"
+      type="font/woff2"
+      fetchpriority="low"
+      crossorigin="anonymous"
+    />
+
+    <script>
+      // Thème et détection JavaScript, appliqués avant le premier rendu
+      // pour éviter tout clignotement.
+      ;(function () {
+        var root = document.documentElement
+        root.setAttribute('data-js', 'on')
+        try {
+          var stored = localStorage.getItem('cathy-theme')
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+          root.setAttribute('data-theme', theme)
+          var meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) meta.setAttribute('content', theme === 'dark' ? '#141813' : '#fdfaf3')
+        } catch (error) {
+          /* stockage indisponible : le thème système s'applique */
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"><!--app-html--></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

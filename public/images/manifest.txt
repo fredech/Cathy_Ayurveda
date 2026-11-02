@@ -1,0 +1,8 @@
+# Généré par scripts/images.mjs — ne pas modifier à la main
+portrait — 564px source, largeurs : 400, 480, 564 (avif/webp/jpg)
+spices — 1024px source, largeurs : 400, 480, 640, 768, 1024 (avif/webp/jpg) ⚠ source tronquée, ré-export recommandé
+banner — 1024px source, largeurs : 400, 480, 640, 768, 1024 (avif/webp/jpg)
+wheel-reference — ignorée (reference)
+stock-1 — ignorée (excluded)
+stock-2 — ignorée (excluded)
+apple-touch-icon.png — 180×180 (dérivé de favicon.svg)

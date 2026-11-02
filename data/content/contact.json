@@ -1,0 +1,55 @@
+{
+  "eyebrow": "Prendre rendez-vous",
+  "title": "Me contacter",
+  "intro": "Décrivez-moi en quelques lignes votre situation et ce que vous cherchez. Je vous réponds personnellement et nous voyons ensemble la formule la plus adaptée, sans engagement.",
+  "detailsTitle": "Mes coordonnées",
+  "detailsIntro": "Le plus simple reste l'e-mail. Si vous préférez être rappelé(e), indiquez-le dans votre message.",
+  "formTitle": "Formulaire de contact",
+  "formIntro": "Les champs marqués d'un astérisque sont obligatoires. Aucune donnée de santé n'est demandée ici.",
+  "labels": {
+    "name": "Votre nom",
+    "email": "Votre adresse e-mail",
+    "phone": "Votre numéro de téléphone",
+    "subject": "Votre demande",
+    "message": "Votre message",
+    "consent": "J'accepte que les informations transmises soient utilisées pour me répondre. Aucune donnée n'est cédée à un tiers.",
+    "submit": "Envoyer mon message"
+  },
+  "hints": {
+    "phone": "Facultatif : laissez vide si vous préférez échanger par e-mail.",
+    "message": "Quelques phrases suffisent : ce qui vous amène, votre rythme de vie, vos questions.",
+    "consent": "Vous pouvez demander la suppression de ces informations à tout moment (voir la politique de confidentialité)."
+  },
+  "subjects": [
+    "Réserver une consultation",
+    "Question sur l'accompagnement d'un mois",
+    "Question sur les produits de soin",
+    "Autre demande"
+  ],
+  "errors": {
+    "name": "Indiquez votre nom pour que je sache à qui répondre.",
+    "email": "Indiquez une adresse e-mail valide, par exemple prenom@exemple.fr.",
+    "subject": "Choisissez le motif de votre demande.",
+    "message": "Écrivez au moins quelques mots pour que je puisse vous répondre utilement.",
+    "consent": "Merci de cocher cette case pour que je puisse vous répondre."
+  },
+  "success": {
+    "title": "Votre message est prêt",
+    "text": "Votre logiciel de messagerie devrait s'ouvrir avec le message pré-rempli. Si ce n'est pas le cas, utilisez l'adresse e-mail ci-contre."
+  },
+  "noBackend": {
+    "title": "Envoi direct non configuré",
+    "text": "Ce formulaire n'envoie pas encore de message automatiquement : aucun service d'envoi n'est raccordé au site, et l'adresse de réception n'est pas encore renseignée."
+  },
+  "fields": {
+    "responseTimeLabel": "Temps de réponse habituel",
+    "bookingLabel": "Réserver en ligne",
+    "hoursLabel": "Horaires",
+    "addressLabel": "Adresse",
+    "mapLabel": "Voir sur la carte",
+    "phoneLabel": "Téléphone",
+    "whatsappLabel": "WhatsApp",
+    "emailLabel": "E-mail"
+  },
+  "sourceNote": "Formulaire et textes de la page rédigés pour ce site. Service d'envoi, adresse de réception, téléphone, WhatsApp, adresse postale et horaires : TODO."
+}

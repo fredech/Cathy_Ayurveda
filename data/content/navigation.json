@@ -1,0 +1,58 @@
+[
+  {
+    "id": "home",
+    "path": "/",
+    "label": "Accueil",
+    "navLabel": null,
+    "inHeader": true,
+    "inFooter": true
+  },
+  {
+    "id": "roue",
+    "path": "/roue-ayurvedique",
+    "label": "Roue Ayurvédique",
+    "navLabel": "La roue",
+    "inHeader": true,
+    "inFooter": true
+  },
+  {
+    "id": "dosha",
+    "path": "/mon-dosha",
+    "label": "Quelle est mon Dosha ?",
+    "navLabel": "Mon dosha",
+    "inHeader": true,
+    "inFooter": true
+  },
+  {
+    "id": "produits",
+    "path": "/produits",
+    "label": "Les produits de soin",
+    "navLabel": "Produits",
+    "inHeader": true,
+    "inFooter": true
+  },
+  {
+    "id": "coaching",
+    "path": "/coaching",
+    "label": "Mon coaching",
+    "navLabel": "Coaching",
+    "inHeader": true,
+    "inFooter": true
+  },
+  {
+    "id": "contact",
+    "path": "/contact",
+    "label": "Me contacter",
+    "navLabel": "Contact",
+    "inHeader": true,
+    "inFooter": true
+  },
+  {
+    "id": "confidentialite",
+    "path": "/confidentialite",
+    "label": "Confidentialité",
+    "navLabel": null,
+    "inHeader": false,
+    "inFooter": true
+  }
+]
