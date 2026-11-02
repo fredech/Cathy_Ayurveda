@@ -27,6 +27,66 @@ async function exists(path) {
   }
 }
 
+/**
+ * Détoure un logo fourni sur fond clair et l'exporte en WebP avec alpha.
+ *
+ * Le fond (papier crème) est converti en transparence à partir de la
+ * luminance : les pixels sombres du dessin restent opaques, les pixels clairs
+ * deviennent transparents, avec un dégradé pour les bords anti-crénelés. La
+ * couleur est unifiée pour éviter les halos clairs sur fond sombre.
+ */
+async function generateLogo(image) {
+  const source = join(root, image.source)
+  if (!(await exists(source))) return `${image.id} — SOURCE MANQUANTE : ${image.source}`
+
+  const { data, info } = await sharp(source).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+  const out = Buffer.alloc(info.width * info.height * 4)
+  const [red, green, blue] = [82, 92, 42]
+  let minX = info.width
+  let minY = info.height
+  let maxX = 0
+  let maxY = 0
+
+  for (let y = 0; y < info.height; y += 1) {
+    for (let x = 0; x < info.width; x += 1) {
+      const index = (y * info.width + x) * 4
+      const luminance =
+        0.2126 * data[index] + 0.7152 * data[index + 1] + 0.0722 * data[index + 2]
+      let alpha = (238 - luminance) / (238 - 95)
+      alpha = Math.max(0, Math.min(1, alpha))
+      if (alpha < 0.06) alpha = 0
+
+      out[index] = red
+      out[index + 1] = green
+      out[index + 2] = blue
+      out[index + 3] = Math.round(alpha * 255)
+
+      if (alpha > 0) {
+        if (x < minX) minX = x
+        if (y < minY) minY = y
+        if (x > maxX) maxX = x
+        if (y > maxY) maxY = y
+      }
+    }
+  }
+
+  if (maxX < minX || maxY < minY) return `${image.id} — dessin introuvable`
+
+  const padding = 6
+  const left = Math.max(0, minX - padding)
+  const top = Math.max(0, minY - padding)
+  const width = Math.min(info.width - left, maxX - minX + 1 + padding * 2)
+  const height = Math.min(info.height - top, maxY - minY + 1 + padding * 2)
+
+  await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
+    .extract({ left, top, width, height })
+    .resize({ width: 256, withoutEnlargement: true })
+    .webp({ quality: 90, alphaQuality: 100, effort: 6 })
+    .toFile(join(outDir, `${image.id}.webp`))
+
+  return `${image.id} — ${width}×${height} détouré, 256 px (webp alpha)`
+}
+
 async function run() {
   await mkdir(outDir, { recursive: true })
   const report = []
@@ -34,6 +94,11 @@ async function run() {
   for (const image of config.images) {
     if (image.usage === 'reference' || image.usage === 'excluded') {
       report.push(`${image.id} — ignorée (${image.usage})`)
+      continue
+    }
+
+    if (image.usage === 'logo') {
+      report.push(await generateLogo(image))
       continue
     }
 

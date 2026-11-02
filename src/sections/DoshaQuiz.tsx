@@ -3,7 +3,6 @@ import { dosha } from '../lib/data'
 import type { DoshaId } from '../lib/data'
 import { Section } from '../components/ui/Section'
 import { Button } from '../components/ui/Button'
-import { MissingData } from '../components/ui/MissingData'
 
 type Answers = Record<string, DoshaId>
 
@@ -169,9 +168,6 @@ export function DoshaQuiz() {
               tendances dominantes qui évoluent selon les saisons et les périodes de vie.
             </p>
             <p className="mt-4 text-sm text-text-muted">{dosha.disclaimer}</p>
-            <div className="mt-6">
-              <MissingData label={dosha.sourceNote} />
-            </div>
           </div>
         </aside>
       </div>

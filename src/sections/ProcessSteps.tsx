@@ -1,7 +1,6 @@
 import { coaching } from '../lib/data'
 import { Section } from '../components/ui/Section'
 import { Reveal } from '../components/ui/Reveal'
-import { MissingData } from '../components/ui/MissingData'
 
 /** Déroulé de l'accompagnement, en quatre étapes. */
 export function ProcessSteps() {
@@ -45,14 +44,8 @@ export function ProcessSteps() {
           </ul>
         </div>
         <div className="max-w-xl">
-          <h3 className="text-xl text-text">Ce qui reste à préciser</h3>
-          <p className="mt-3 text-sm text-text-muted">
-            Les informations pratiques (durées, tarifs, formats, lieu) seront ajoutées dès qu’elles
-            seront confirmées.
-          </p>
-          <div className="mt-4">
-            <MissingData label={coaching.sourceNote} />
-          </div>
+          <h3 className="text-xl text-text">Bon à savoir</h3>
+          <p className="mt-3 text-sm text-text-muted">{coaching.practicalNote}</p>
         </div>
       </div>
     </Section>

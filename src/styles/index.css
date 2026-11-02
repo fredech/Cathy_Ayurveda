@@ -82,6 +82,7 @@
   --color-text: #1f2a21;
   --color-text-muted: #54604f;
   --color-text-invert: #fffdf7;
+  --color-logo: #525c2a;
   --color-line: #e2d8c4;
   --color-line-strong: #d3c6ad;
   --color-field-line: #9c8b66;
@@ -127,6 +128,7 @@
     --color-text: #efede3;
     --color-text-muted: #b3bca9;
     --color-text-invert: #141813;
+    --color-logo: #c3d2b0;
     --color-line: #333b31;
     --color-line-strong: #414a3e;
     --color-field-line: #5a6b53;
@@ -154,6 +156,7 @@
   --color-text: #efede3;
   --color-text-muted: #b3bca9;
   --color-text-invert: #141813;
+  --color-logo: #c3d2b0;
   --color-line: #333b31;
   --color-line-strong: #414a3e;
   --color-field-line: #5a6b53;
@@ -324,6 +327,14 @@
 @utility pill-mask {
   border-radius: 999rem;
   overflow: hidden;
+}
+
+/* Logo : le WebP sert de masque alpha et prend la couleur du thème, pour
+   rester lisible sur fond clair comme sur fond sombre. */
+@utility logo-mark {
+  background-color: var(--color-logo);
+  -webkit-mask: url('/images/logo.webp') center / contain no-repeat;
+  mask: url('/images/logo.webp') center / contain no-repeat;
 }
 
 /* Les sections basses sont peintes à la demande : gain de rendu initial sans

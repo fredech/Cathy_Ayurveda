@@ -118,8 +118,7 @@ export function buildJsonLd(path: string, seo: PageSeo): Record<string, unknown>
     inLanguage: site.lang,
     areaServed: 'FR',
     slogan: site.hero.claim,
-    // TODO : renseigner une fourchette de prix lorsque les tarifs seront connus.
-    priceRange: 'TODO',
+    priceRange: '75 € – 680 €',
     founder: {
       '@type': 'Person',
       name: 'Cathy',

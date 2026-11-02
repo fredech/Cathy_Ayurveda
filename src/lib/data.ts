@@ -5,8 +5,8 @@
  * écrit en dur dans les composants. Pour modifier les textes, les tarifs ou
  * les coordonnées du site : éditez les fichiers JSON, le site se met à jour.
  *
- * Les valeurs manquantes sont explicitement `null` ; l'interface les affiche
- * comme des repères « TODO » à compléter (voir `src/components/ui/MissingData`).
+ * Les valeurs manquantes sont explicitement `null` ; l'interface n'affiche que
+ * les informations réellement renseignées.
  */
 import siteJson from '../../data/content/site.json'
 import navJson from '../../data/content/navigation.json'
@@ -116,7 +116,6 @@ export interface WheelContent {
   slogan: string
   intro: string
   instruction: string
-  sourceNote: string
   slots: TimeSlot[]
 }
 
@@ -146,7 +145,6 @@ export interface DoshaContent {
   subtitle: string
   intro: string
   disclaimer: string
-  sourceNote: string
   questions: QuizQuestion[]
   profiles: Record<DoshaId, DoshaProfile>
   mixedNote: string
@@ -175,7 +173,7 @@ export interface ProduitsContent {
   intro: string
   globalCaution: string
   purchaseNote: string
-  sourceNote: string
+  availability: string
   items: Product[]
 }
 
@@ -209,7 +207,7 @@ export interface CoachingContent {
   subtitle: string
   intro: string
   medicalGuarantee: string
-  sourceNote: string
+  practicalNote: string
   offers: Offer[]
   process: { title: string; steps: OfferStep[] }
   forWho: { title: string; items: string[] }
@@ -230,7 +228,6 @@ export interface LegalContent {
   title: string
   updated: string
   intro: string
-  sourceNote: string
   sections: LegalSection[]
 }
 
@@ -238,8 +235,6 @@ export interface ContactContent {
   eyebrow: string
   title: string
   intro: string
-  detailsTitle: string
-  detailsIntro: string
   formTitle: string
   formIntro: string
   labels: {
@@ -257,17 +252,6 @@ export interface ContactContent {
   success: { title: string; text: string }
   sending: string
   error: { title: string; text: string }
-  fields: {
-    responseTimeLabel: string
-    bookingLabel: string
-    hoursLabel: string
-    addressLabel: string
-    mapLabel: string
-    phoneLabel: string
-    whatsappLabel: string
-    emailLabel: string
-  }
-  sourceNote: string
 }
 
 export const site = siteJson as Site

@@ -4,6 +4,18 @@
   "formats": ["avif", "webp", "jpg"],
   "images": [
     {
+      "id": "logo",
+      "usage": "logo",
+      "source": "data/logo cathy.png",
+      "crop": null,
+      "width": 256,
+      "height": 256,
+      "formats": ["webp"],
+      "alt": "Logo Cathy Ayurveda : un visage de femme et des feuilles dans un cercle.",
+      "caption": null,
+      "note": "Logo fourni sur fond crème. Le fond est retiré (alpha) et le fichier est généré en WebP 256 px. Affiché via un masque CSS pour rester lisible en mode clair et sombre."
+    },
+    {
       "id": "hero",
       "usage": "photo",
       "source": "data/PHOTO-index.jpg",
@@ -57,7 +69,7 @@
       "height": 1320,
       "alt": null,
       "caption": null,
-      "note": "Aperçu d'image de banque avec watermark « magnific.com ». Non publiée : TODO remplacer par une photo originale ou une licence."
+      "note": "Aperçu d'image de banque avec watermark « magnific.com ». Non publiée : à remplacer par une photo originale ou une licence."
     },
     {
       "id": "stock-2",
@@ -68,7 +80,7 @@
       "height": 1320,
       "alt": null,
       "caption": null,
-      "note": "Aperçu d'image de banque avec watermark « shutterstock.com ». Non publiée : TODO remplacer par une photo originale ou une licence."
+      "note": "Aperçu d'image de banque avec watermark « shutterstock.com ». Non publiée : à remplacer par une photo originale ou une licence."
     }
   ]
 }

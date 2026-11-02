@@ -1,7 +1,7 @@
 {
   "lang": "fr",
   "url": "https://www.cathy-ayurveda.fr",
-  "urlNote": "TODO : confirmer le nom de domaine définitif. Les URL canoniques, le sitemap, robots.txt et les balises Open Graph dépendent de cette valeur.",
+  "urlNote": "Nom de domaine utilisé pour les URL canoniques, le sitemap, robots.txt et les balises Open Graph.",
   "brand": {
     "name": "Cathy Ayurveda",
     "role": "Coach franco-indienne en Ayurveda",
@@ -32,5 +32,5 @@
     "youtube": null
   },
   "disclaimer": "Les prestations proposées sont des approches de bien-être complémentaires issues de la tradition ayurvédique. Elles ne constituent ni un diagnostic, ni un traitement médical et ne remplacent en aucun cas l'avis, le suivi ou les prescriptions d'un professionnel de santé.",
-  "medicalPartnerNote": "Le protocole détaillé remis dans le cadre de l'accompagnement d'un mois est validé par un médecin agréé en Ayurveda."
+  "medicalPartnerNote": "Le protocole détaillé remis dans le cadre des accompagnements d'un mois et de trois mois est validé par un médecin agréé en Ayurveda."
 }

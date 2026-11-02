@@ -1,10 +1,10 @@
 {
   "eyebrow": "Accompagnement",
   "title": "Mon coaching",
-  "subtitle": "Deux façons de commencer : une séance ponctuelle pour faire le point, ou un accompagnement d'un mois avec un protocole détaillé.",
+  "subtitle": "Trois façons de commencer : une séance ponctuelle pour faire le point, ou un accompagnement personnalisé d'un mois ou de trois mois.",
   "intro": "L'Ayurveda ne se limite pas à des conseils généraux : il s'agit de regarder votre rythme, votre alimentation, votre sommeil et votre environnement pour proposer des ajustements réalistes, tenables sur le long terme.",
-  "medicalGuarantee": "Le protocole détaillé remis dans le cadre de l'accompagnement d'un mois est validé par un médecin agréé en Ayurveda.",
-  "sourceNote": "Structure des offres fournie par la praticienne. Durées, tarifs, formats et détail du protocole : TODO.",
+  "medicalGuarantee": "Le protocole détaillé remis dans le cadre des accompagnements d'un mois et de trois mois est validé par un médecin agréé en Ayurveda.",
+  "practicalNote": "Les séances durent 1 h 15. L'accompagnement d'un mois comprend 4 séances, celui de trois mois en comprend 12. Les modalités pratiques sont confirmées lors de la prise de contact.",
   "offers": [
     {
       "id": "seance",
@@ -14,13 +14,14 @@
       "tagline": "Faire le point, repartir avec des premiers repères.",
       "description": "Un rendez-vous unique pour découvrir votre profil ayurvédique, passer en revue vos habitudes et repartir avec des premières recommandations concrètes.",
       "includes": [
+        "Une séance de 1 h 15",
         "Un temps d'échange sur votre profil et votre rythme de vie",
         "Une lecture de vos habitudes alimentaires, de sommeil et d'énergie",
         "Des premières recommandations simples à mettre en place"
       ],
-      "duration": null,
+      "duration": "1 h 15",
       "format": null,
-      "price": null,
+      "price": "75 €",
       "ctaLabel": "Réserver une séance"
     },
     {
@@ -32,14 +33,33 @@
       "description": "Un accompagnement personnalisé sur un mois : bilan approfondi, protocole détaillé écrit et remis, puis suivi pour ajuster ce qui doit l'être. Le protocole est validé par un médecin agréé en Ayurveda.",
       "includes": [
         "Un bilan ayurvédique approfondi",
+        "Quatre séances de 1 h 15 sur un mois",
         "Un protocole détaillé personnalisé, remis par écrit",
-        "Un accompagnement régulier pendant un mois",
         "Des ajustements au fil des semaines",
         "Un protocole validé par un médecin agréé en Ayurveda"
       ],
-      "duration": null,
+      "duration": "1 mois · 4 séances de 1 h 15",
       "format": null,
-      "price": null,
+      "price": "279 €",
+      "ctaLabel": "Démarrer l'accompagnement"
+    },
+    {
+      "id": "accompagnement-3-mois",
+      "highlight": false,
+      "badge": null,
+      "name": "Accompagnement personnalisé de 3 mois",
+      "tagline": "Un accompagnement dans la durée, pour installer les changements durablement.",
+      "description": "Un accompagnement personnalisé sur trois mois : bilan approfondi, protocole détaillé écrit et remis, puis douze séances de suivi pour ajuster le protocole au fil des semaines. Le protocole est validé par un médecin agréé en Ayurveda.",
+      "includes": [
+        "Un bilan ayurvédique approfondi",
+        "Douze séances de 1 h 15 réparties sur trois mois",
+        "Un protocole détaillé personnalisé, remis par écrit",
+        "Des ajustements réguliers au fil des semaines",
+        "Un protocole validé par un médecin agréé en Ayurveda"
+      ],
+      "duration": "3 mois · 12 séances de 1 h 15",
+      "format": null,
+      "price": "680 €",
       "ctaLabel": "Démarrer l'accompagnement"
     }
   ],
@@ -60,7 +80,7 @@
       },
       {
         "title": "Suivi et ajustements",
-        "text": "Pendant un mois, nous ajustons ce qui doit l'être : le protocole vit avec vous, il ne reste pas théorique."
+        "text": "Pendant la durée de l'accompagnement, nous ajustons ce qui doit l'être : le protocole vit avec vous, il ne reste pas théorique."
       }
     ]
   },
@@ -80,7 +100,7 @@
     },
     {
       "question": "Comment se déroule une séance concrètement ?",
-      "answer": "TODO : la praticienne précise ici le déroulé exact, la durée, le lieu ou l'outil de visioconférence, et ce qu'il faut préparer."
+      "answer": "Une séance dure 1 h 15. Nous faisons le point sur votre situation, votre rythme et vos habitudes, puis je vous propose des repères concrets et adaptés à votre quotidien. Dans le cadre d'un accompagnement, un protocole écrit est remis et ajusté au fil des séances."
     },
     {
       "question": "Faut-il des connaissances en Ayurveda pour commencer ?",
@@ -88,11 +108,11 @@
     },
     {
       "question": "Les séances sont-elles possibles à distance ?",
-      "answer": "TODO : indiquer si les séances et l'accompagnement sont proposés en visioconférence, en présentiel, ou les deux, et où."
+      "answer": "Les modalités (visioconférence ou présentiel) sont convenues ensemble lors de la prise de contact, selon votre situation et votre lieu de résidence."
     },
     {
       "question": "Combien coûtent une séance et l'accompagnement ?",
-      "answer": "TODO : indiquer les tarifs de la séance ponctuelle et de l'accompagnement d'un mois, ainsi que les moyens de paiement."
+      "answer": "La séance ponctuelle est à 75 € pour 1 h 15. L'accompagnement personnalisé d'un mois est à 279 € (4 séances de 1 h 15) et celui de trois mois à 680 € (12 séances de 1 h 15). Les modalités de paiement sont précisées à la réservation."
     },
     {
       "question": "Les produits conviennent-ils à tout le monde ?",

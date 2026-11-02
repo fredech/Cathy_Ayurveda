@@ -2,7 +2,6 @@ import { useRef, useState } from 'react'
 import { contact, contactPage, site } from '../lib/data'
 import { Button } from '../components/ui/Button'
 import { CheckboxField, SelectField, TextAreaField, TextField } from '../components/ui/Field'
-import { MissingData } from '../components/ui/MissingData'
 
 interface FormValues {
   name: string
@@ -210,10 +209,6 @@ export function ContactForm() {
           <p className="m-0 text-xs text-text-muted">{site.disclaimer}</p>
         </div>
       </form>
-
-      <div className="mt-8 max-w-2xl">
-        <MissingData label={contactPage.sourceNote} />
-      </div>
     </div>
   )
 }

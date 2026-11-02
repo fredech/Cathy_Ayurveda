@@ -3,7 +3,6 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { headerNav, site } from '../../lib/data'
 import { Button } from '../ui/Button'
 import { ThemeToggle } from './ThemeToggle'
-import { Sprig } from '../graphics/Botanical'
 
 function Logo() {
   return (
@@ -12,12 +11,7 @@ function Logo() {
       className="group flex items-center gap-3 no-underline"
       aria-label={`${site.brand.name} — retour à l'accueil`}
     >
-      <span
-        aria-hidden="true"
-        className="grid size-11 shrink-0 place-items-center rounded-full border border-line bg-surface text-accent transition-colors duration-300 group-hover:border-accent"
-      >
-        <Sprig className="size-6" />
-      </span>
+      <span aria-hidden="true" className="logo-mark size-11 shrink-0" />
       <span className="flex flex-col leading-none">
         <span className="font-display text-lg tracking-tight text-text">{site.brand.logoText}</span>
         <span className="mt-0.5 text-2xs tracking-[0.16em] text-text-muted uppercase">

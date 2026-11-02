@@ -5,7 +5,7 @@
   "intro": "Les quantités sont volontairement limitées à cinq références. Chaque produit est accompagné de son origine botanique et de conseils d'usage. Les informations ci-dessous sont données à titre éducatif et ne remplacent pas un avis professionnel de santé.",
   "globalCaution": "Les plantes et les huiles ne conviennent pas à tout le monde. En cas de grossesse, d'allaitement, de traitement médicamenteux, d'allergie connue ou de maladie chronique, demandez l'avis d'un professionnel de santé avant utilisation.",
   "purchaseNote": "Les produits sont remis lors des rendez-vous ou expédiés sur demande. Pour connaître les formats et les disponibilités, écrivez-moi.",
-  "sourceNote": "Descriptions rédigées à partir des usages traditionnels de l'Ayurveda. Validation par la praticienne et ajout des formats, prix et visuels produits : TODO.",
+  "availability": "Produits disponibles pendant le coaching.",
   "items": [
     {
       "id": "huile-capilaire",

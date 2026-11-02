@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { contact, footerNav, hasContact, site, telHref, whatsappHref } from '../../lib/data'
 import { Divider, Sprig } from '../graphics/Botanical'
-import { MissingData } from '../ui/MissingData'
 
 export function Footer() {
   const phone = telHref()
@@ -40,17 +39,13 @@ export function Footer() {
           <div>
             <h2 className="text-sm font-medium tracking-wide">Me joindre</h2>
             <ul className="mt-4 space-y-3 text-sm">
-              {hasContact.email ? (
+              {hasContact.email && contact.email ? (
                 <li>
                   <a href={`mailto:${contact.email}`} className="text-text-muted no-underline hover:text-accent-text">
                     {contact.email}
                   </a>
                 </li>
-              ) : (
-                <li>
-                  <MissingData variant="inline" label="adresse e-mail de contact" />
-                </li>
-              )}
+              ) : null}
 
               {phone ? (
                 <li>

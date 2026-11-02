@@ -4,7 +4,6 @@
   "subtitle": "Un questionnaire d'auto-observation pour découvrir votre tendance dominante : Vata, Pitta ou Kapha.",
   "intro": "Chaque personne est un mélange unique des trois doshas. Ce questionnaire vous aide à repérer les tendances les plus présentes chez vous, pour mieux comprendre vos besoins et adapter votre quotidien.",
   "disclaimer": "Ce questionnaire est éducatif et indicatif. Il ne s'agit pas d'un diagnostic : seul un praticien formé peut établir un bilan ayurvédique complet, et seul un médecin peut poser un diagnostic médical.",
-  "sourceNote": "Questionnaire rédigé à partir des principes classiques de l'Ayurveda (qualités des trois doshas). Validation par la praticienne : TODO.",
   "questions": [
     {
       "id": "morphologie",

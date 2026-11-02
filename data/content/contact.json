@@ -2,8 +2,6 @@
   "eyebrow": "Prendre rendez-vous",
   "title": "Me contacter",
   "intro": "Décrivez-moi en quelques lignes votre situation et ce que vous cherchez. Je vous réponds personnellement et nous voyons ensemble la formule la plus adaptée, sans engagement.",
-  "detailsTitle": "Mes coordonnées",
-  "detailsIntro": "Le plus simple reste l'e-mail. Si vous préférez être rappelé(e), indiquez-le dans votre message.",
   "formTitle": "Formulaire de contact",
   "formIntro": "Les champs marqués d'un astérisque sont obligatoires. Aucune donnée de santé n'est demandée ici.",
   "labels": {
@@ -22,7 +20,7 @@
   },
   "subjects": [
     "Réserver une consultation",
-    "Question sur l'accompagnement d'un mois",
+    "Question sur un accompagnement",
     "Question sur les produits de soin",
     "Autre demande"
   ],
@@ -41,16 +39,5 @@
   "error": {
     "title": "L'envoi n'a pas abouti",
     "text": "Une erreur est survenue pendant l'envoi. Réessayez dans quelques instants ou écrivez-moi directement :"
-  },
-  "fields": {
-    "responseTimeLabel": "Temps de réponse habituel",
-    "bookingLabel": "Réserver en ligne",
-    "hoursLabel": "Horaires",
-    "addressLabel": "Adresse",
-    "mapLabel": "Voir sur la carte",
-    "phoneLabel": "Téléphone",
-    "whatsappLabel": "WhatsApp",
-    "emailLabel": "E-mail"
-  },
-  "sourceNote": "Formulaire et textes de la page rédigés pour ce site. Téléphone, WhatsApp, adresse postale et horaires : TODO."
+  }
 }

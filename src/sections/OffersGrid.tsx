@@ -2,19 +2,18 @@ import { coaching, site } from '../lib/data'
 import { Section } from '../components/ui/Section'
 import { Reveal } from '../components/ui/Reveal'
 import { Button } from '../components/ui/Button'
-import { MissingData } from '../components/ui/MissingData'
 import { Sprig } from '../components/graphics/Botanical'
 
-/** Les deux formules : une séance ponctuelle, ou un accompagnement d'un mois. */
+/** Les trois formules : une séance ponctuelle ou un accompagnement d'un ou trois mois. */
 export function OffersGrid() {
   return (
     <Section
       id="formules"
-      title="Deux formules"
+      title="Trois formules"
       intro={<p>{coaching.intro}</p>}
       defer
     >
-      <ul className="grid gap-6 lg:grid-cols-2">
+      <ul className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {coaching.offers.map((offer, index) => (
           <Reveal as="li" key={offer.id} delay={index * 90}>
             <article
@@ -47,21 +46,21 @@ export function OffersGrid() {
               <dl className="mt-8 grid grid-cols-2 gap-4 border-t border-line pt-6 text-sm">
                 <div>
                   <dt className="text-text-muted">Durée</dt>
-                  <dd className="m-0 font-medium text-text">
-                    {offer.duration ?? <span className="text-text-muted">à préciser</span>}
-                  </dd>
+                  <dd className="m-0 font-medium text-text">{offer.duration ?? 'à convenir'}</dd>
                 </div>
                 <div>
-                  <dt className="text-text-muted">Format</dt>
-                  <dd className="m-0 font-medium text-text">
-                    {offer.format ?? <span className="text-text-muted">à préciser</span>}
+                  <dt className="text-text-muted">Tarif</dt>
+                  <dd className="m-0 text-lg font-semibold text-accent-text">
+                    {offer.price ?? 'sur demande'}
                   </dd>
                 </div>
+                {offer.format ? (
+                  <div className="col-span-2">
+                    <dt className="text-text-muted">Format</dt>
+                    <dd className="m-0 font-medium text-text">{offer.format}</dd>
+                  </div>
+                ) : null}
               </dl>
-
-              <div className="mt-6">
-                <MissingData label={`tarif de la formule « ${offer.name} »`} />
-              </div>
 
               <div className="mt-auto pt-8">
                 <Button

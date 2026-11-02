@@ -3,7 +3,6 @@ import { roue } from '../lib/data'
 import type { DoshaId, TimeSlot } from '../lib/data'
 import { Section } from '../components/ui/Section'
 import { Reveal } from '../components/ui/Reveal'
-import { MissingData } from '../components/ui/MissingData'
 
 const CX = 150
 const CY = 150
@@ -276,9 +275,6 @@ export function DoshaWheel() {
         <p className="mt-8 text-base">
           <strong className="font-display text-lg font-normal">{roue.slogan}</strong>
         </p>
-        <div className="mt-6 max-w-2xl">
-          <MissingData label={roue.sourceNote} />
-        </div>
       </div>
     </Section>
   )

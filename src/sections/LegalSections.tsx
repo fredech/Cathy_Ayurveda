@@ -1,6 +1,5 @@
 import { legal, site } from '../lib/data'
 import { Container } from '../components/ui/Container'
-import { MissingData } from '../components/ui/MissingData'
 import { Reveal } from '../components/ui/Reveal'
 
 /** Rendu des sections RGPD, telles que décrites dans `data/content/legal.json`. */
@@ -64,7 +63,6 @@ export function LegalSections() {
         </div>
 
         <div className="mt-14 max-w-2xl space-y-4">
-          <MissingData label={legal.sourceNote} />
           <p className="text-sm text-text-muted">{site.disclaimer}</p>
         </div>
       </Container>

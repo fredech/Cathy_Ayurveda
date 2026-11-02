@@ -2,13 +2,12 @@ import { produits } from '../lib/data'
 import { Section } from '../components/ui/Section'
 import { Reveal } from '../components/ui/Reveal'
 import { Illustration } from '../components/graphics/Botanical'
-import { MissingData } from '../components/ui/MissingData'
 
 /**
  * Cinq soins et plantes traditionnels.
  * Chaque fiche indique la matière première, l'usage traditionnel, le mode
- * d'emploi et les précautions. Les informations commerciales manquantes
- * (format, prix, visuel) sont affichées comme repères à compléter.
+ * d'emploi et les précautions. La disponibilité est indiquée dans le bloc
+ * « Commander ».
  */
 export function ProductGrid() {
   return (
@@ -53,12 +52,6 @@ export function ProductGrid() {
                   <dd className="m-0 text-text-muted">{product.cautions}</dd>
                 </div>
               </dl>
-
-              <div className="mt-auto pt-6">
-                <MissingData
-                  label={`format, prix et visuel du produit « ${product.name} »`}
-                />
-              </div>
             </article>
           </Reveal>
         ))}
@@ -68,15 +61,12 @@ export function ProductGrid() {
         <div>
           <h3 className="text-lg text-text">Commander</h3>
           <p className="mt-3 text-sm text-text-muted">{produits.purchaseNote}</p>
+          <p className="mt-2 text-sm font-medium text-accent-text">{produits.availability}</p>
         </div>
         <div>
           <h3 className="text-lg text-text">À savoir avant de commencer</h3>
           <p className="mt-3 text-sm text-text-muted">{produits.globalCaution}</p>
         </div>
-      </div>
-
-      <div className="mt-8 max-w-2xl">
-        <MissingData label={produits.sourceNote} />
       </div>
     </Section>
   )

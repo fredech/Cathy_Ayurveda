@@ -1,8 +1,7 @@
 {
   "title": "Politique de confidentialité",
-  "updated": "TODO : date de dernière mise à jour",
+  "updated": "2 novembre 2026",
   "intro": "Cette page explique quelles données personnelles sont collectées sur ce site, pourquoi, combien de temps elles sont conservées et comment exercer vos droits, conformément au Règlement général sur la protection des données (RGPD).",
-  "sourceNote": "Modèle rédigé pour ce site. À faire relire et compléter par la praticienne (mentions légales, hébergeur, durées de conservation) : TODO.",
   "sections": [
     {
       "id": "responsable",
@@ -10,7 +9,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Le responsable du traitement des données est l'éditeur du site : TODO : nom ou raison sociale, adresse, numéro SIRET s'il existe, et adresse e-mail de contact."
+          "text": "Le responsable du traitement des données est l'éditeur du site, Cathy Ayurveda. Pour toute question relative à vos données, écrivez à cathyayurveda@gmail.com."
         }
       ]
     },
@@ -58,7 +57,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "TODO : préciser la durée de conservation. À défaut de durée spécifique, les demandes de contact sont conservées trois ans à compter du dernier échange, puis supprimées."
+          "text": "Les demandes de contact sont conservées trois ans à compter du dernier échange, puis supprimées."
         }
       ]
     },
@@ -73,8 +72,7 @@
         {
           "type": "list",
           "items": [
-            "Mon fournisseur d'envoi d'e-mails : Resend (États-Unis)",
-            "L'hébergeur du site : TODO : nom de l'hébergeur et pays d'hébergement"
+            "Mon fournisseur d'envoi d'e-mails : Resend (États-Unis)"
           ]
         },
         {
@@ -99,7 +97,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données. Pour l'exercer : TODO : adresse e-mail de contact."
+          "text": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données. Pour l'exercer, écrivez à cathyayurveda@gmail.com."
         },
         {
           "type": "paragraph",
@@ -123,7 +121,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "TODO : compléter les mentions légales obligatoires (éditeur, statut juridique, immatriculation, hébergeur, assurance professionnelle s'il y a lieu)."
+          "text": "Le site est édité par Cathy Ayurveda. Les informations légales complètes (statut juridique, immatriculation, hébergeur) sont disponibles sur demande à cathyayurveda@gmail.com."
         }
       ]
     },
