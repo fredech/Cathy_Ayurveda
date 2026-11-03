@@ -20,7 +20,8 @@ npm run lint       # ESLint
 
 Le formulaire envoie un `POST` à `/api/contact`. Cette route est une fonction
 Vercel définie dans `api/contact.ts` : elle valide les champs puis transmet le
-message par [Resend](https://resend.com) à `cathyayurveda@gmail.com`.
+message par [Resend](https://resend.com) à l'adresse définie dans la variable
+d'environnement `email_contact`.
 
 La clé API n'est **jamais** exposée au navigateur : elle est lue uniquement
 côté serveur, dans `process.env`.
@@ -28,22 +29,15 @@ côté serveur, dans `process.env`.
 ### Déploiement sur Vercel
 
 1. Créer une clé API sur <https://resend.com/api-keys>.
-2. Choisir l'expéditeur. Resend n'autorise pas l'envoi depuis `@gmail.com` :
-   il faut soit un domaine vérifié dans Resend (onglet **Domains**), soit
-   l'adresse de test `onboarding@resend.dev`.
+2. Vérifier le domaine `cathyayurveda.com` dans Resend (onglet **Domains**).
+   L'expéditeur est `Cathy Ayurveda <contact@cathyayurveda.com>`.
 3. Dans le projet Vercel → **Settings → Environment Variables**, ajouter :
-   - `Resend_key` : la clé `re_…` (obligatoire).
-   - `CONTACT_FROM_EMAIL` : facultatif, expéditeur sur le domaine vérifié.
-     Par défaut `Cathy Ayurveda <onboarding@resend.dev>`.
-   - `email_contact` : facultatif, destinataire.
-     Par défaut `cathyayurveda@gmail.com` (alias : `CONTACT_TO_EMAIL`).
+   - `RESEND_API_KEY` : la clé `re_…` (obligatoire).
+   - `email_contact` : destinataire des messages (obligatoire).
 4. Redéployer le site.
 
-Avec l'expéditeur par défaut `onboarding@resend.dev`, Resend n'envoie qu'à
-l'adresse e-mail du compte Resend. Si le compte est bien ouvert avec
-`cathyayurveda@gmail.com`, le formulaire fonctionne immédiatement ; sinon,
-vérifier `cathyayurveda.com` et définir `CONTACT_FROM_EMAIL` avec une adresse
-de ce domaine (par exemple `Cathy Ayurveda <contact@cathyayurveda.com>`).
+L'adresse saisie par le visiteur est utilisée comme adresse de réponse
+(`reply_to`) : il est possible de répondre directement depuis sa boîte mail.
 
 ### Tester en local
 
@@ -52,7 +46,7 @@ Pour tester le formulaire de bout en bout, utiliser Vercel CLI, qui sert à la
 fois Vite et la fonction :
 
 ```bash
-cp .env.example .env   # renseigner Resend_key
+cp .env.example .env   # renseigner RESEND_API_KEY et email_contact
 npx vercel dev
 ```
 

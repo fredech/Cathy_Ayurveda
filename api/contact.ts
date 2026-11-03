@@ -8,21 +8,17 @@
  * Variables d'environnement (à définir dans Vercel et, pour les tests locaux,
  * dans un fichier `.env` — voir `.env.example`) :
  *
- * - `Resend_key` (ou `RESEND_KEY`) : clé API Resend, obligatoire.
- * - `CONTACT_FROM_EMAIL` : expéditeur, sur un domaine vérifié dans Resend.
- *   Par défaut : `Cathy Ayurveda <onboarding@resend.dev>` (adresse de test
- *   Resend, qui n'envoie qu'à l'adresse du compte Resend).
- * - `email_contact` : destinataire. Par défaut : `cathyayurveda@gmail.com`.
- *   (alias accepté : `CONTACT_TO_EMAIL`).
+ * - `RESEND_API_KEY` (ou `Resend_key` / `RESEND_KEY`) : clé API Resend,
+ *   obligatoire.
+ * - `email_contact` : destinataire, obligatoire. Aucune valeur par défaut
+ *   n'est codée en dur.
  *
- * Remarque : Resend ne permet pas d'envoyer depuis une adresse `@gmail.com`
- * (le domaine doit être vérifié). L'adresse Gmail sert donc de destinataire
- * et d'adresse de réponse, pas d'expéditeur.
+ * L'expéditeur est fixé à une adresse du domaine `cathyayurveda.com`, vérifié
+ * dans Resend. L'adresse saisie par le visiteur sert de `reply_to`.
  */
 import { Resend } from 'resend'
 
-const DEFAULT_TO = 'cathyayurveda@gmail.com'
-const DEFAULT_FROM = 'Cathy Ayurveda <onboarding@resend.dev>'
+const FROM_ADDRESS = 'Cathy Ayurveda <contact@cathyayurveda.com>'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
@@ -83,7 +79,7 @@ function parsePayload(input: unknown): ContactPayload | null {
   if (!payload.name) return null
   if (!EMAIL_PATTERN.test(payload.email)) return null
   if (!payload.subject) return null
-  if (payload.message.length < 10) return null
+  if (!payload.message) return null
   if (!payload.consent) return null
 
   return payload
@@ -131,9 +127,19 @@ function buildEmail(payload: ContactPayload) {
 }
 
 export async function POST(request: Request): Promise<Response> {
-  const key = process.env.Resend_key ?? process.env.RESEND_KEY
+  const key = process.env.RESEND_API_KEY ?? process.env.Resend_key ?? process.env.RESEND_KEY
+  const to = process.env.email_contact
+
   if (!key) {
-    console.error('[contact] Clé Resend manquante : définissez la variable Resend_key.')
+    console.error(
+      '[contact] Variable d’environnement manquante : RESEND_API_KEY (ou Resend_key / RESEND_KEY).',
+    )
+  }
+  if (!to) {
+    console.error('[contact] Variable d’environnement manquante : email_contact.')
+  }
+
+  if (!key || !to) {
     return json(500, {
       error: "Le service d'envoi n'est pas configuré. Merci d'écrire directement à cathyayurveda@gmail.com.",
     })
@@ -155,8 +161,8 @@ export async function POST(request: Request): Promise<Response> {
   try {
     const resend = new Resend(key)
     const { error } = await resend.emails.send({
-      from: process.env.CONTACT_FROM_EMAIL ?? DEFAULT_FROM,
-      to: process.env.email_contact ?? process.env.CONTACT_TO_EMAIL ?? DEFAULT_TO,
+      from: FROM_ADDRESS,
+      to,
       replyTo: payload.email,
       subject: `[Site] ${payload.subject} — ${payload.name}`,
       text,
